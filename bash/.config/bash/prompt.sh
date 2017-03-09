@@ -7,16 +7,16 @@ bash_prompt_command()
 
     local R="\[\033[0;31m\]"    # red
     local C="\[\033[0;36m\]"    # cyan
-    local EMB="\[\033[1;34m\]"  # bold blue
+    local EMG="\[\033[1;32m\]"  # green
 
-    local UC=$C               # user's color
+    local UC=$EMG               # user's color
     (($(id -u) == "0")) && UC=$R   # root's color
 
     force_color_prompt=yes
     if [[ "$force_color_prompt" = yes ]]; then
-        PS1="${UC}\u@\h${NONE}:${EMB}[\w]${UC}\n\\$ ${NONE}"
+        PS1="${C}\w\n${UC}\\$ ${NONE}"
     else
-        PS1="\u@\h:[\w]\n\\$ "
+        PS1="\w\n\\$ "
     fi
 }
 bash_prompt_command
