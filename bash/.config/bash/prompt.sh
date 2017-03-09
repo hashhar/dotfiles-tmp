@@ -3,24 +3,32 @@ PS1='[\u@\h \W]\$ '
 
 bash_prompt_command()
 {
-    local NONE="\[\033[0m\]"    # unsets color to term's fg color
+    exit_code=$?
+    local NONE="\[\033[0m\]"             # unsets color to term's fg color
 
-    local R="\[\033[0;31m\]"    # red
-    local C="\[\033[0;36m\]"    # cyan
-    local EMG="\[\033[1;32m\]"  # green
+    local R="\[\033[0;31m\]"             # red
+    local C="\[\033[0;36m\]"             # cyan
+    local G="\[\033[0;32m\]"             # green
 
-    local UC=$EMG               # user's color
-    (($(id -u) == "0")) && UC=$R   # root's color
+    local UC=$G                          # user's color
+    local EC=$R                          # user's exit color
+    (($(id -u) == "0")) && local UC=$R   # root's color
+    (($(id -u) == "0")) && local EC=$G   # root's exit color
 
     force_color_prompt=yes
-    if [[ "$force_color_prompt" = yes ]]; then
-        PS1="${C}\w\n${UC}\\$ ${NONE}"
+    if (( exit_code != 0 )); then
+        trailing="${EC}\\$"
     else
-        PS1="\w\n\\$ "
+        trailing="${UC}\\$"
+    fi
+    if [[ "$force_color_prompt" = yes ]]; then
+        PS1="${C}\w ${trailing} ${NONE}"
+    else
+        PS1="\w \\$ "
     fi
 }
 bash_prompt_command
-unset bash_prompt_command
+export PROMPT_COMMAND=bash_prompt_command
 # }}}
 
 # vim: tw=80 fdm=marker
