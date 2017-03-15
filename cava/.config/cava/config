@@ -54,7 +54,7 @@
 ; source = hw:Loopback,1 
 
 method = fifo
-source = /tmp/mpd.fifo
+source = /tmp/mpdcava.fifo
 
 
 
