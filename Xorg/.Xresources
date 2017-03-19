@@ -92,7 +92,7 @@ URxvt*color15:			#EEEEEC
 ! Font configuration {{{
 Xft.autohint:			0
 Xft.lcdfilter:			lcddefault
-Xft.hintstyle:			hintslight
+Xft.hintstyle:			hintmedium
 Xft.hinting:			1
 Xft.antialias:			1
 Xft.rgba:			rgb
@@ -103,6 +103,25 @@ Xft.dpi:			100
 ! Fira Mono
 URxvt.font:			xft:Fira Mono:size=10
 URxvt.letterSpace:		-2
+
+! Tamzen {{{
+!URxvt*font:			-*-tamzen-medium-*-*-*-16-*-*-*-*-*-*-*
+!URxvt*font1:			-*-tamzen-medium-*-*-*-9-*-*-*-*-*-*-*
+!URxvt*font2:			-*-tamzen-medium-*-*-*-12-*-*-*-*-*-*-*
+!URxvt*font3:			-*-tamzen-medium-*-*-*-13-*-*-*-*-*-*-*
+!URxvt*font4:			-*-tamzen-medium-*-*-*-15-*-*-*-*-*-*-*
+!URxvt*font5:			-*-tamzen-medium-*-*-*-16-*-*-*-*-*-*-*
+!URxvt*font6:			-*-tamzen-medium-*-*-*-20-*-*-*-*-*-*-*
+
+! Tamzen fonts for use with Powerline
+!URxvt*font:			-*-tamzenforpowerline-medium-*-*-*-16-*-*-*-*-*-*-*
+!URxvt*font1:			-*-tamzenforpowerline-medium-*-*-*-9-*-*-*-*-*-*-*
+!URxvt*font2:			-*-tamzenforpowerline-medium-*-*-*-12-*-*-*-*-*-*-*
+!URxvt*font3:			-*-tamzenforpowerline-medium-*-*-*-13-*-*-*-*-*-*-*
+!URxvt*font4:			-*-tamzenforpowerline-medium-*-*-*-15-*-*-*-*-*-*-*
+!URxvt*font5:			-*-tamzenforpowerline-medium-*-*-*-16-*-*-*-*-*-*-*
+!URxvt*font6:			-*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
+! }}}
 ! }}}
 
 ! vim: tw=80 fdm=marker
