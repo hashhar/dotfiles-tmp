@@ -1,3 +1,6 @@
+# Path {{{
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+# }}}
 # Default programs {{{
 export EDITOR=vim
 export VISUAL=vim
@@ -12,14 +15,18 @@ fi
 # }}}
 
 # Mount point variables {{{
-Resources	DEFAULT=/media/Resources
-Media		DEFAULT=/media/Media
-Data		DEFAULT=/media/Data
-GitHub		DEFAULT=${Resources}/GitHub
+export Resources='/media/Resources'
+export Media='/media/Media'
+export Data='/media/Data'
+export GitHub="${Resources}/GitHub"
 # }}}
 
 # Pacaur {{{
 export AURDEST='/home/ashhar/makepkg/sources/'
 # }}}
 
-# vim: tw=80 fdm=marker
+# Ruby {{{
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+# }}}
+
+# vim: tw=8 fdm=marker

@@ -7,6 +7,7 @@
 
 [[ -f ~/.config/bash/bashopts.sh ]] && . ~/.config/bash/bashopts.sh
 [[ -f ~/.config/bash/variables.sh ]] && . ~/.config/bash/variables.sh
+[[ -f ~/.config/bash/sourcing.sh ]] && . ~/.config/bash/sourcing.sh
 
 [[ -f ~/.config/bash/prompt.sh ]] && . ~/.config/bash/prompt.sh
 
