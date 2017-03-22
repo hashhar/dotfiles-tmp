@@ -1,15 +1,16 @@
 # Path {{{
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # }}}
+
 # Default programs {{{
 export EDITOR=vim
 export VISUAL=vim
 
 # Browser {{{
 if [[ -n "$DISPLAY" ]]; then
-	export BROWSER=firefox
+    export BROWSER=firefox
 else
-	export BROWSER=elinks
+    export BROWSER=elinks
 fi
 # }}}
 # }}}
