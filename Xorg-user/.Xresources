@@ -35,60 +35,139 @@ URxvt.matcher.rend.0:		Uline Bold fg5
 
 ! URxvt colours {{{
 ! dotshare.it {{{
-URxvt.foreground:		#E8DFD6
-URxvt.background:		#021B21
-!URxvt.cursorColor:		#2E3340
-URxvt.cursorColor:		#E8DFD6
-URxvt.color0:			#032C36
-URxvt.color8:			#065F73
-URxvt.color1:			#C2454E
-URxvt.color9:			#EF5847
-URxvt.color2:			#7CBF9E
-URxvt.color10:			#A2D9B1
-URxvt.color3:			#8A7A63
-URxvt.color11:			#BEB090
-URxvt.color4:			#2E3340
-URxvt.color12:			#61778D
-URxvt.color5:			#FF5879
-URxvt.color13:			#FF99A1
-URxvt.color6:			#44B5B1
-URxvt.color14:			#9ED9D8
-URxvt.color7:			#F2F1B9
-URxvt.color15:			#F6F6C9
+!URxvt.foreground:		#E8DFD6
+!URxvt.background:		#021B21
+!!URxvt.cursorColor:		#2E3340
+!URxvt.cursorColor:		#E8DFD6
+!URxvt.color0:			#032C36
+!URxvt.color8:			#065F73
+!URxvt.color1:			#C2454E
+!URxvt.color9:			#EF5847
+!URxvt.color2:			#7CBF9E
+!URxvt.color10:			#A2D9B1
+!URxvt.color3:			#8A7A63
+!URxvt.color11:			#BEB090
+!URxvt.color4:			#2E3340
+!URxvt.color12:			#61778D
+!URxvt.color5:			#FF5879
+!URxvt.color13:			#FF99A1
+!URxvt.color6:			#44B5B1
+!URxvt.color14:			#9ED9D8
+!URxvt.color7:			#F2F1B9
+!URxvt.color15:			#F6F6C9
 ! }}}
 
 ! Tango color palette {{{
-!URxvt.background:		#2E3436
-!URxvt.foreground:		#EEEEEC
-!URxvt.cursorcolor:		#8AE234
-!! foreground color for underline
-!URxvt.colorul:			#8AE234
-!! line color for underline
-!URxvt.underlineColor:		#92659A
-!! black dark/light
-!URxvt.color0:			#2E3436
-!URxvt.color8:			#6E706B
-!! red dark/light
-!URxvt.color1:			#CC0000
-!URxvt.color9:			#EF2929
-!! green dark/light
-!URxvt.color2:			#4E9A06
-!URxvt.color10:			#8AE234
-!! yellow dark/light
-!URxvt.color3:			#EDD400
-!URxvt.color11:			#FCE94F
-!! blue dark/light
-!URxvt.color4:			#3465A4
-!URxvt.color12:			#729FCF
-!! magenta dark/light
-!URxvt.color5:			#92659A
-!URxvt.color13:			#C19FBE
-!! cyan dark/light
-!URxvt.color6:			#07C7CA
-!URxvt.color14:			#63E9E9
-!! white dark/light
-!URxvt.color7:			#D3D7CF
-!URxvt.color15:			#EEEEEC
+URxvt.background:		#2E3436
+URxvt.foreground:		#EEEEEC
+URxvt.cursorcolor:		#8AE234
+! foreground color for underline
+URxvt.colorul:			#8AE234
+! line color for underline
+URxvt.underlineColor:		#92659A
+! black dark/light
+URxvt.color0:			#2E3436
+URxvt.color8:			#6E706B
+! red dark/light
+URxvt.color1:			#CC0000
+URxvt.color9:			#EF2929
+! green dark/light
+URxvt.color2:			#4E9A06
+URxvt.color10:			#8AE234
+! yellow dark/light
+URxvt.color3:			#EDD400
+URxvt.color11:			#FCE94F
+! blue dark/light
+URxvt.color4:			#3465A4
+URxvt.color12:			#729FCF
+! magenta dark/light
+URxvt.color5:			#92659A
+URxvt.color13:			#C19FBE
+! cyan dark/light
+URxvt.color6:			#07C7CA
+URxvt.color14:			#63E9E9
+! white dark/light
+URxvt.color7:			#D3D7CF
+URxvt.color15:			#EEEEEC
+! }}}
+
+! Gruvbox Dark {{{
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+!! hard contrast: *background: #1d2021
+!URxvt.background: #282828
+!! soft contrast: *background: #32302f
+!URxvt.foreground: #ebdbb2
+!! Black + DarkGrey
+!URxvt.color0:  #282828
+!URxvt.color8:  #928374
+!! DarkRed + Red
+!URxvt.color1:  #cc241d
+!URxvt.color9:  #fb4934
+!! DarkGreen + Green
+!URxvt.color2:  #98971a
+!URxvt.color10: #b8bb26
+!! DarkYellow + Yellow
+!URxvt.color3:  #d79921
+!URxvt.color11: #fabd2f
+!! DarkBlue + Blue
+!URxvt.color4:  #458588
+!URxvt.color12: #83a598
+!! DarkMagenta + Magenta
+!URxvt.color5:  #b16286
+!URxvt.color13: #d3869b
+!! DarkCyan + Cyan
+!URxvt.color6:  #689d6a
+!URxvt.color14: #8ec07c
+!! LightGrey + White
+!URxvt.color7:  #a89984
+!URxvt.color15: #ebdbb2
+! }}}
+
+! Gruvbox Light {{{
+! -----------------------------------------------------------------------------
+! File: gruvbox-light.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+!! hard contrast: *background: #f9f5d7
+!URxvt.background: #fbf1c7
+!! soft contrast: *background: #f2e5bc
+!URxvt.foreground: #3c3836
+!! Black + DarkGrey
+!URxvt.color0:  #fdf4c1
+!URxvt.color8:  #928374
+!! DarkRed + Red
+!URxvt.color1:  #cc241d
+!URxvt.color9:  #9d0006
+!! DarkGreen + Green
+!URxvt.color2:  #98971a
+!URxvt.color10: #79740e
+!! DarkYellow + Yellow
+!URxvt.color3:  #d79921
+!URxvt.color11: #b57614
+!! DarkBlue + Blue
+!URxvt.color4:  #458588
+!URxvt.color12: #076678
+!! DarkMagenta + Magenta
+!URxvt.color5:  #b16286
+!URxvt.color13: #8f3f71
+!! DarkCyan + Cyan
+!URxvt.color6:  #689d6a
+!URxvt.color14: #427b58
+!! LightGrey + White
+!URxvt.color7:  #7c6f64
+!URxvt.color15: #3c3836
+! }}}
 ! }}}
 
 ! Font configuration {{{
