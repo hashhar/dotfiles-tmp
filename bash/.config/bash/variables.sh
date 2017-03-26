@@ -30,4 +30,8 @@ export AURDEST='/home/ashhar/makepkg/sources/'
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 # }}}
 
-# vim: tw=8 fdm=marker
+# WeeChat {{{
+export WEECHAT_HOME='/home/ashhar/.config/weechat'
+# }}}
+
+# vim: tw=80 fdm=marker
