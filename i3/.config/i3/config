@@ -113,6 +113,10 @@ force_display_urgency_hint                  1000 ms
 bindsym       $mod+period                   workspace next
 bindsym       $mod+comma                    workspace prev
 
+# Create new workspace at the end
+bindsym       $mod+n                        exec --no-startup-id ~/.config/i3/scripts/new_workspace.sh
+
+# Workspace Names {{{
 set           $workspace1                   "1:"
 set           $workspace2                   "2:"
 set           $workspace3                   "3:"
@@ -123,6 +127,7 @@ set           $workspace7                   "7:"
 set           $workspace8                   "8:"
 set           $workspace9                   "9:"
 set           $workspace10                  "10: "
+# }}}
 
 # Switch to workspace
 bindsym       $mod+1                        workspace $workspace1
