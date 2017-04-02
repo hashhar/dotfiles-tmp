@@ -26,18 +26,13 @@ font                                        pango:Fira Sans, FontAwesome, Powerl
 floating_modifier                           $mod
 # }}}
 
-# Keybindings {{{
-# start a terminal
-bindsym       $mod+Return                   exec i3-sensible-terminal
-# }}}
-
 # Launchers {{{
 # start dmenu (a program launcher)
 bindsym       $mod+d                        exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym       $mod+Shift+d                  exec --no-startup-id i3-dmenu-desktop
+bindsym       $mod1+d                       exec --no-startup-id i3-dmenu-desktop
 # }}}
 
 # Window Management {{{
@@ -80,7 +75,7 @@ bindsym       $mod+v                        split v
 # enter fullscreen mode for the focused container
 bindsym       $mod+f                        fullscreen toggle
 # enter fullscreen with the application spanning all screens
-bindsym       $mod+Shift+f                  fullscreen toggle global
+bindsym       $mod1+f                       fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym       $mod+s                        layout stacking
@@ -229,19 +224,35 @@ bar {
 # }
 # }}}
 
+# Keybindings {{{
+# start a terminal
+bindsym       $mod+Return                   exec i3-sensible-terminal
+
+# Function Keys {{{
 # Pulse Audio controls
-bindsym       XF86AudioRaiseVolume          exec --no-startup-id pamixer -i 5 #increase sound volume
-bindsym       XF86AudioLowerVolume          exec --no-startup-id pamixer -d 5 #decrease sound volume
-bindsym       XF86AudioMute                 exec --no-startup-id pamixer -t # mute sound
+bindsym       XF86AudioRaiseVolume          exec --no-startup-id pamixer -i 5
+bindsym       $mod1+XF86AudioRaiseVolume    exec --no-startup-id pamixer -i 5 --allow-boost
+
+bindsym       XF86AudioLowerVolume          exec --no-startup-id pamixer -d 5
+bindsym       $mod1+XF86AudioLowerVolume    exec --no-startup-id pamixer -d 5 --allow-boost
+
+bindsym       XF86AudioMute                 exec --no-startup-id pamixer -t
 
 # Sreen brightness controls
-bindsym       XF86MonBrightnessUp           exec --no-startup-id xbacklight -inc 5 # increase screen brightness
-bindsym       XF86MonBrightnessDown         exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
+bindsym       XF86MonBrightnessUp           exec --no-startup-id xbacklight -inc 5
+bindsym       XF86MonBrightnessDown         exec --no-startup-id xbacklight -dec 5
 
 # Media player controls
 bindsym       XF86AudioPlay                 exec --no-startup-id mpc toggle
+bindsym       $mod1+XF86AudioPlay           exec --no-startup-id mpc stop
+
 bindsym       XF86AudioNext                 exec --no-startup-id mpc next
+bindsym       $mod1+XF86AudioNext           exec --no-startup-id mpc seek +30
+
 bindsym       XF86AudioPrev                 exec --no-startup-id mpc prev
+bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
+# }}}
+# }}}
 
 # Startup Commands {{{
 exec --no-startup-id                        ~/.fehbg
