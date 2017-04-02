@@ -9,7 +9,11 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Modifier keys {{{
+# Mod4 is Super, Mod1 is Meta
 set           $mod                          Mod1
+set           $mod1                         Mod4
+# }}}
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -154,6 +158,25 @@ bindsym       $mod+r                        mode "resize"
 bar {
               status_command                i3status
 }
+
+bindsym       $mod+Shift+minus              move scratchpad
+bindsym       $mod+minus                    scratchpad show
+
+# Pulse Audio controls
+bindsym       XF86AudioRaiseVolume          exec pamixer -i 5 #increase sound volume
+bindsym       XF86AudioLowerVolume          exec pamixer -d 5 #decrease sound volume
+bindsym       XF86AudioMute                 exec pamixer -t # mute sound
+
+# Sreen brightness controls
+bindsym       XF86MonBrightnessUp           exec xbacklight -inc 5 # increase screen brightness
+bindsym       XF86MonBrightnessDown         exec xbacklight -dec 5 # decrease screen brightness
+
+# Media player controls
+bindsym       XF86AudioPlay                 exec mpc toggle
+bindsym       XF86AudioNext                 exec mpc next
+bindsym       XF86AudioPrev                 exec mpc prev
+
+exec          ~/.fehbg
 
 # Vim macro for aligning stuff
 # 0w100i dwW100i dwj
