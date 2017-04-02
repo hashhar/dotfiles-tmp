@@ -154,3 +154,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Vim macro for aligning stuff
+# 0w100i dwW100i dwj
+# 0w100i dwj
+# vim: colorcolumn=15,45,120 fdm=marker tw=120
