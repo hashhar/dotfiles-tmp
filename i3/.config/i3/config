@@ -201,6 +201,7 @@ bindsym       $mod+b                        bar mode toggle
 
 bar {
               i3bar_command                 i3bar
+              status_command                i3status
               font                          pango:Fira Sans, FontAwesome, PowerlineSymbols 8
               modifier                      $mod1
               tray_output                   primary
@@ -210,17 +211,17 @@ bar {
               strip_workspace_numbers       yes
 }
 
-bar {
-              i3bar_command                 i3bar
-              status_command                i3status
-              font                          pango:Fira Sans, FontAwesome, PowerlineSymbols 8
-              position                      top
-              modifier                      $mod1
-              tray_output                   primary
-              separator_symbol              "|"
-              workspace_buttons             no
-              binding_mode_indicator        no
-}
+# bar {
+#               i3bar_command                 i3bar
+#               status_command                i3status
+#               font                          pango:Fira Sans, FontAwesome, PowerlineSymbols 8
+#               position                      top
+#               modifier                      $mod1
+#               tray_output                   primary
+#               separator_symbol              "|"
+#               workspace_buttons             no
+#               binding_mode_indicator        no
+# }
 # }}}
 
 # Pulse Audio controls
