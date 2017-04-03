@@ -24,6 +24,8 @@ font                                        pango:Fira Sans, FontAwesome, Powerl
 # Mouse {{{
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier                           $mod
+focus_follows_mouse                         no
+mouse_warping                               none
 # }}}
 
 # Launchers {{{
@@ -38,6 +40,14 @@ bindsym       $mod1+d                       exec --no-startup-id i3-dmenu-deskto
 # Window Management {{{
 # kill focused window
 bindsym       $mod+Shift+q                  kill
+show_marks                                  yes
+
+# Make the currently focused window a scratchpad
+bindsym       $mod+Shift+minus              move scratchpad
+# Move all floating windows to the scratchpad
+bindsym       $mod1+Shift+minus             [floating] move scratchpad
+# Show the first scratchpad window
+bindsym       $mod+minus                    scratchpad show
 
 # Movement and Focus {{{
 # change focus
@@ -147,11 +157,6 @@ bindsym       $mod+Shift+7                  move container to workspace $ws7
 bindsym       $mod+Shift+8                  move container to workspace $ws8
 bindsym       $mod+Shift+9                  move container to workspace $ws9
 bindsym       $mod+Shift+0                  move container to workspace $ws10
-
-# Make the currently focused window a scratchpad
-bindsym       $mod+Shift+minus              move scratchpad
-# Show the first scratchpad window
-bindsym       $mod+minus                    scratchpad show
 # }}}
 
 # Reloading Configuration {{{
