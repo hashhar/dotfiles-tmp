@@ -260,7 +260,6 @@ bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
 # }}}
 
 # Startup Commands {{{
-exec --no-startup-id                        ~/.fehbg
 # }}}
 
 # Gaps {{{
