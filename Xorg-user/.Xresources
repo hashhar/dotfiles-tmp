@@ -1,16 +1,14 @@
 ! URxvt behaviour {{{
-! Fix Alt key
-URxvt*meta8:			true
-! do not scroll with output
-URxvt*scrollTtyOutput:		false
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer:		true
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress:	true
-! Be sane when scrolling in pagers
-URxvt.secondaryScreen:		1
-URxvt.secondaryScroll:		0
-URxvt.scrollBar:		0
+! Scroll {{{
+URxvt.scrollstyle:		plain
+URxvt.scrollBar:		true
+URxvt.scrollBar_right:		true
+URxvt.secondaryScroll:		false
+URxvt.scrollTtyOutput:		false
+URxvt.scrollWithBuffer:		true
+URxvt.scrollTtyKeypress:	true
+URxvt.saveLines:		10000
+! }}}
 ! Extensions {{{
 URxvt.perl-ext:			default,url-select
 
@@ -26,43 +24,20 @@ URxvt.url-select.launcher:	/usr/local/bin/firefox
 URxvt.url-select.underline:	true
 
 ! Clickable URLs (matcher)
-!URxvt.perl-ext-common:		matcher
-!URxvt.url-launcher:		/usr/local/bin/firefox
-!URxvt.matcher.button:		1
-!URxvt.matcher.rend.0:		Uline Bold fg5
+URxvt.perl-ext-common:		matcher
+URxvt.url-launcher:		/usr/local/bin/firefox
+URxvt.matcher.button:		1
+URxvt.matcher.rend.0:		Uline Bold fg5
 ! }}}
 ! }}}
 
 ! URxvt colours {{{
-! dotshare.it {{{
-!URxvt.foreground:		#E8DFD6
-!URxvt.background:		#021B21
-!!URxvt.cursorColor:		#2E3340
-!URxvt.cursorColor:		#E8DFD6
-!URxvt.color0:			#032C36
-!URxvt.color8:			#065F73
-!URxvt.color1:			#C2454E
-!URxvt.color9:			#EF5847
-!URxvt.color2:			#7CBF9E
-!URxvt.color10:			#A2D9B1
-!URxvt.color3:			#8A7A63
-!URxvt.color11:			#BEB090
-!URxvt.color4:			#2E3340
-!URxvt.color12:			#61778D
-!URxvt.color5:			#FF5879
-!URxvt.color13:			#FF99A1
-!URxvt.color6:			#44B5B1
-!URxvt.color14:			#9ED9D8
-!URxvt.color7:			#F2F1B9
-!URxvt.color15:			#F6F6C9
-! }}}
-
 ! Tango color palette {{{
 URxvt.background:		#2E3436
 URxvt.foreground:		#EEEEEC
 URxvt.cursorcolor:		#8AE234
 ! foreground color for underline
-URxvt.colorul:			#8AE234
+URxvt.colorUL:			#8AE234
 ! line color for underline
 URxvt.underlineColor:		#92659A
 ! black dark/light
@@ -191,6 +166,13 @@ Xft.dpi:			100
 ! Tamzen
 URxvt.font:			xft:TamzenForPowerline:size=12
 URxvt.letterSpace:		0
+! }}}
+
+! Visuals {{{
+URxvt.depth:			32
+URxvt.urgentOnBell:		true
+URxvt.transparent:		true
+URxvt.shading:			10
 ! }}}
 
 ! vim: tw=80 fdm=marker
