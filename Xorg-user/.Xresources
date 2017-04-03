@@ -171,8 +171,9 @@ URxvt.letterSpace:		0
 ! Visuals {{{
 URxvt.depth:			32
 URxvt.urgentOnBell:		true
-URxvt.transparent:		true
-URxvt.shading:			10
+!URxvt.transparent:		true
+URxvt.background:		rgba:0000/0000/0000/bbbb
+!URxvt.shading:			10
 ! }}}
 
 ! vim: tw=80 fdm=marker
