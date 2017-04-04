@@ -2,7 +2,7 @@
 
 initializeANSI()
 {
-    esc=""
+    esc=""
   
     blackf="${esc}[30m";   redf="${esc}[31m";    greenf="${esc}[32m"
     yellowf="${esc}[33m"   bluef="${esc}[34m";   purplef="${esc}[35m"

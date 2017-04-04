@@ -12,8 +12,10 @@ ${cbr}Options:${cc}
   -h        Show this help.
   -m        Move the file. This is the default behaviour.
   -d        Delete the file. This and ${cbg}-m${cc} are mutually exclusive.
-  -b        The ${cbg}music-directory${cc} variable in mpd's configuration. Defaults to ${cbg}$HOME/Music${cc}. It MUST exist.
-  -l        The directory where files should be moved when using ${cbg}-m${cc}. This option has no effect when used with ${cbg}-d${cc}. It MUST exist.
+  -b dir    The ${cbg}music-directory${cc} variable in mpd's configuration.
+            Defaults to ${cbg}$HOME/Music${cc}. It MUST exist.
+  -l dir    The directory where files should be moved when using ${cbg}-m${cc}.
+            This has no effect when used with ${cbg}-d${cc}. It MUST exist.
   -f        No confirmation when deleting or moving files.
 
 This script depends on ${cbg}mpc${cc} and ${cbg}mpd${cc}.
@@ -21,8 +23,11 @@ This script depends on ${cbg}mpc${cc} and ${cbg}mpd${cc}.
 ${cbr}Exit Codes:${cc}
   0         Indicates successful move or deletion of a file.
   1         Problem parsing command line arguments.
-  2         Extra arguments passed to the script which cause an issue while parsing command line arguments.
-  3         Problem with the directories passed to (or default values) ${cb}-d${cc} or ${cb}-l${cc} options. Check if they exist and are writable by the current user.
+  2         Extra arguments passed to the script which cause an issue while
+            parsing command line arguments.
+  3         Problem with the directories passed to (or default values)
+            ${cbg}-d${cc} or ${cbg}-l${cc} options.
+            Check if they exist and are writable by the current user.
 
 EOF
 }
@@ -150,3 +155,5 @@ fi
 
 # Reset working directory.
 cd "$oldpwd"
+
+# vim: set tw=80 sts=4 ts=4 sw=4 et fdm=marker
