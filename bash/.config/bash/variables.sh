@@ -23,7 +23,7 @@ export GitHub="${Resources}/GitHub"
 # }}}
 
 # Pacaur {{{
-export AURDEST='/home/ashhar/makepkg/sources/'
+export AURDEST='/home/ashhar/makepkg/pacaur-cache/'
 # }}}
 
 # Ruby {{{
