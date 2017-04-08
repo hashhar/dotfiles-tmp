@@ -34,4 +34,9 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export WEECHAT_HOME='/home/ashhar/.config/weechat'
 # }}}
 
-# vim: tw=80 fdm=marker
+# Less {{{
+export LESSHISTFILE="${XDG_DATA_HOME:="$HOME/.local/share"}/less/history"
+[ -d "$(dirname $LESSHISTFILE)" ] || mkdir -pi "$(dirname "$LESSHISTFILE")"
+# }}}
+
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4

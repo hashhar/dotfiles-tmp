@@ -33,15 +33,6 @@ alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
 alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
-
-note() {
-    case $@ in
-        "-e") vim ~/.note;;
-          "") cat ~/.note | less;;
-           *) printf "$(date +%F\ %T): $@\n" >> ~/note
-              printf "\"$@\" added to your notes.\n";;
-    esac
-}
 # }}}
 
 alias bc='bc -q'
@@ -57,29 +48,20 @@ fi
 # }}}
 
 # Make errors tolerable {{{
-alias :q=' exit'
-alias :Q=' exit'
-alias :x=' exit'
-alias quit=' exit'
+alias :q='exit'
+alias :Q='exit'
+alias :x='exit'
+alias quit='exit'
 alias cd..='cd ..'
 alias vi='vim'
 # }}}
 
 # Miscellaneous {{{
-bg_run() {
-    nohup "$@" > /dev/null 2>&1 &
-}
-
-randomvideo() {
-    bg_run mpv "$(find "${1:-$HOME/Videos}" -type f -not -name "*.srt" \
-        -not -name "*.torrent" | shuf -n 1)"
-}
-
 # Cowsay Fortune
 alias cowfor='fortune -eac | tee >(head -n 1 >> \
-"$HOME/.fortune-category-log") | tail -n +3 | cowsay -f "$(find \
-/usr/share/cowsay/cows/ -type f | sort -R | head -1)" -W $((COLUMNS - 10))\
-| lolcat'
+    "$HOME/.fortune-category-log") | tail -n +3 | cowsay -f "$(find \
+    /usr/share/cowsay/cows/ -type f | sort -R | head -1)" -W $((COLUMNS - 10))\
+    | lolcat'
 # }}}
 
-# vim: tw=80 fdm=marker
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4

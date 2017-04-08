@@ -31,4 +31,4 @@ bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
 # }}}
 
-# vim: tw=80 fdm=marker
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4
