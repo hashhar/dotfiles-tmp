@@ -71,7 +71,7 @@ bg_run() {
 }
 
 randomvideo() {
-    bg_run mpv "$(find ${1:-$HOME/Videos} -type f -not -name "*.srt" \
+    bg_run mpv "$(find "${1:-$HOME/Videos}" -type f -not -name "*.srt" \
         -not -name "*.torrent" | shuf -n 1)"
 }
 

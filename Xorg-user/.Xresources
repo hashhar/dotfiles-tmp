@@ -1,69 +1,71 @@
 ! URxvt behaviour {{{
 ! Scroll {{{
-URxvt.scrollstyle:		plain
-URxvt.scrollBar:		true
-URxvt.scrollBar_right:		true
-URxvt.secondaryScroll:		false
-URxvt.scrollTtyOutput:		false
-URxvt.scrollWithBuffer:		true
-URxvt.scrollTtyKeypress:	true
-URxvt.saveLines:		10000
+URxvt.scrollstyle:              plain
+URxvt.scrollBar:                true
+URxvt.scrollBar_right:          true
+
+URxvt.secondaryScroll:          false
+URxvt.scrollTtyOutput:          false
+URxvt.scrollWithBuffer:         true
+URxvt.scrollTtyKeypress:        true
+URxvt.saveLines:                10000
 ! }}}
+
 ! Extensions {{{
-URxvt.perl-ext:			default,url-select
+URxvt.perl-ext:                 default,url-select
 
 ! Tabs (tabbed)
-URxvt.tabbed.tabbar-fg:		2
-URxvt.tabbed.tabbar-bg:		0
-URxvt.tabbed.tab-fg:		3
-URxvt.tabbed.tab-bg:		0
+URxvt.tabbed.tabbar-fg:         2
+URxvt.tabbed.tabbar-bg:         0
+URxvt.tabbed.tab-fg:            3
+URxvt.tabbed.tab-bg:            0
 
 ! Keyboard navigable URLs (url-select)
-URxvt.keysym.M-u:		perl:url-select:select_next
-URxvt.url-select.launcher:	/usr/local/bin/firefox
-URxvt.url-select.underline:	true
+URxvt.keysym.M-u:               perl:url-select:select_next
+URxvt.url-select.launcher:      /usr/local/bin/firefox
+URxvt.url-select.underline:     true
 
 ! Clickable URLs (matcher)
-URxvt.perl-ext-common:		matcher
-URxvt.url-launcher:		/usr/local/bin/firefox
-URxvt.matcher.button:		1
-URxvt.matcher.rend.0:		Uline Bold fg5
+URxvt.perl-ext-common:          matcher
+URxvt.url-launcher:             /usr/local/bin/firefox
+URxvt.matcher.button:           1
+URxvt.matcher.rend.0:           Uline Bold fg5
 ! }}}
 ! }}}
 
 ! URxvt colours {{{
 ! Tango color palette {{{
-URxvt.background:		#2E3436
-URxvt.foreground:		#EEEEEC
-URxvt.cursorcolor:		#8AE234
+URxvt.background:               #2E3436
+URxvt.foreground:               #EEEEEC
+URxvt.cursorcolor:              #8AE234
 ! foreground color for underline
-URxvt.colorUL:			#8AE234
+URxvt.colorUL:                  #8AE234
 ! line color for underline
-URxvt.underlineColor:		#92659A
+URxvt.underlineColor:           #92659A
 ! black dark/light
-URxvt.color0:			#2E3436
-URxvt.color8:			#6E706B
+URxvt.color0:                   #2E3436
+URxvt.color8:                   #6E706B
 ! red dark/light
-URxvt.color1:			#CC0000
-URxvt.color9:			#EF2929
+URxvt.color1:                   #CC0000
+URxvt.color9:                   #EF2929
 ! green dark/light
-URxvt.color2:			#4E9A06
-URxvt.color10:			#8AE234
+URxvt.color2:                   #4E9A06
+URxvt.color10:                  #8AE234
 ! yellow dark/light
-URxvt.color3:			#EDD400
-URxvt.color11:			#FCE94F
+URxvt.color3:                   #EDD400
+URxvt.color11:                  #FCE94F
 ! blue dark/light
-URxvt.color4:			#3465A4
-URxvt.color12:			#729FCF
+URxvt.color4:                   #3465A4
+URxvt.color12:                  #729FCF
 ! magenta dark/light
-URxvt.color5:			#92659A
-URxvt.color13:			#C19FBE
+URxvt.color5:                   #92659A
+URxvt.color13:                  #C19FBE
 ! cyan dark/light
-URxvt.color6:			#07C7CA
-URxvt.color14:			#63E9E9
+URxvt.color6:                   #07C7CA
+URxvt.color14:                  #63E9E9
 ! white dark/light
-URxvt.color7:			#D3D7CF
-URxvt.color15:			#EEEEEC
+URxvt.color7:                   #D3D7CF
+URxvt.color15:                  #EEEEEC
 ! }}}
 
 ! Gruvbox Dark {{{
@@ -75,34 +77,34 @@ URxvt.color15:			#EEEEEC
 ! Last Modified: 6 Sep 2014
 ! -----------------------------------------------------------------------------
 
-!! hard contrast: *background: #1d2021
-!URxvt.background: #282828
-!! soft contrast: *background: #32302f
-!URxvt.foreground: #ebdbb2
+!! hard contrast: *background:  #1D2021
+!URxvt.background:              #282828
+!! soft contrast: *background:  #32302F
+!URxvt.foreground:              #EBDBB2
 !! Black + DarkGrey
-!URxvt.color0:  #282828
-!URxvt.color8:  #928374
+!URxvt.color0:                  #282828
+!URxvt.color8:                  #928374
 !! DarkRed + Red
-!URxvt.color1:  #cc241d
-!URxvt.color9:  #fb4934
+!URxvt.color1:                  #CC241D
+!URxvt.color9:                  #FB4934
 !! DarkGreen + Green
-!URxvt.color2:  #98971a
-!URxvt.color10: #b8bb26
+!URxvt.color2:                  #98971A
+!URxvt.color10:                 #B8BB26
 !! DarkYellow + Yellow
-!URxvt.color3:  #d79921
-!URxvt.color11: #fabd2f
+!URxvt.color3:                  #D79921
+!URxvt.color11:                 #FABD2F
 !! DarkBlue + Blue
-!URxvt.color4:  #458588
-!URxvt.color12: #83a598
+!URxvt.color4:                  #458588
+!URxvt.color12:                 #83A598
 !! DarkMagenta + Magenta
-!URxvt.color5:  #b16286
-!URxvt.color13: #d3869b
+!URxvt.color5:                  #B16286
+!URxvt.color13:                 #D3869B
 !! DarkCyan + Cyan
-!URxvt.color6:  #689d6a
-!URxvt.color14: #8ec07c
+!URxvt.color6:                  #689D6A
+!URxvt.color14:                 #8EC07C
 !! LightGrey + White
-!URxvt.color7:  #a89984
-!URxvt.color15: #ebdbb2
+!URxvt.color7:                  #A89984
+!URxvt.color15:                 #EBDBB2
 ! }}}
 
 ! Gruvbox Light {{{
@@ -114,67 +116,73 @@ URxvt.color15:			#EEEEEC
 ! Last Modified: 6 Sep 2014
 ! -----------------------------------------------------------------------------
 
-!! hard contrast: *background: #f9f5d7
-!URxvt.background: #fbf1c7
-!! soft contrast: *background: #f2e5bc
-!URxvt.foreground: #3c3836
+!! hard contrast: *background:  #F9F5D7
+!URxvt.background:              #FBF1C7
+!! soft contrast: *background:  #F2E5BC
+!URxvt.foreground:              #3C3836
 !! Black + DarkGrey
-!URxvt.color0:  #fdf4c1
-!URxvt.color8:  #928374
+!URxvt.color0:                  #FDF4C1
+!URxvt.color8:                  #928374
 !! DarkRed + Red
-!URxvt.color1:  #cc241d
-!URxvt.color9:  #9d0006
+!URxvt.color1:                  #CC241D
+!URxvt.color9:                  #9D0006
 !! DarkGreen + Green
-!URxvt.color2:  #98971a
-!URxvt.color10: #79740e
+!URxvt.color2:                  #98971A
+!URxvt.color10:                 #79740E
 !! DarkYellow + Yellow
-!URxvt.color3:  #d79921
-!URxvt.color11: #b57614
+!URxvt.color3:                  #D79921
+!URxvt.color11:                 #B57614
 !! DarkBlue + Blue
-!URxvt.color4:  #458588
-!URxvt.color12: #076678
+!URxvt.color4:                  #458588
+!URxvt.color12:                 #076678
 !! DarkMagenta + Magenta
-!URxvt.color5:  #b16286
-!URxvt.color13: #8f3f71
+!URxvt.color5:                  #B16286
+!URxvt.color13:                 #8F3F71
 !! DarkCyan + Cyan
-!URxvt.color6:  #689d6a
-!URxvt.color14: #427b58
+!URxvt.color6:                  #689D6A
+!URxvt.color14:                 #427B58
 !! LightGrey + White
-!URxvt.color7:  #7c6f64
-!URxvt.color15: #3c3836
+!URxvt.color7:                  #7C6F64
+!URxvt.color15:                 #3C3836
 ! }}}
 ! }}}
 
 ! Font configuration {{{
-Xft.autohint:			0
-Xft.lcdfilter:			lcddefault
-Xft.hintstyle:			hintmedium
-Xft.hinting:			1
-Xft.antialias:			1
-Xft.rgba:			rgb
-Xft.dpi:			100
+Xft.autohint:                   0
+Xft.lcdfilter:                  lcddefault
+Xft.hintstyle:                  hintmedium
+Xft.hinting:                    1
+Xft.antialias:                  1
+Xft.rgba:                       rgb
+Xft.dpi:                        100
 
 ! Terminus
-!URxvt.font:			xft:xos4 Terminus
-!URxvt.letterSpace:		0
+!URxvt.font:                    xft:xos4 Terminus
+!URxvt.letterSpace:             0
 ! Fira Mono
-!URxvt.font:			xft:Fira Mono:size=10
-!URxvt.letterSpace:		-2
+!URxvt.font:                    xft:Fira Mono:size=10
+!URxvt.letterSpace:             -2
 ! Consolas
-!URxvt.font:			xft:Consolas:size=11
-!URxvt.letterSpace:		-2
+!URxvt.font:                    xft:Consolas:size=11
+!URxvt.letterSpace:             -2
 ! Tamzen
-URxvt.font:			xft:TamzenForPowerline:size=12
-URxvt.letterSpace:		0
+URxvt.font:                     xft:TamzenForPowerline:size=12
+URxvt.letterSpace:              0
+
+URxvt.skipBuiltinGlyphs:        false
 ! }}}
 
 ! Visuals {{{
-URxvt.depth:			32
-URxvt.urgentOnBell:		true
+URxvt.depth:                    32
+URxvt.urgentOnBell:             true
 ! Transparent background
-!URxvt.background:		[75]black
-URxvt.background:		black
-!URxvt.shading:			10
+URxvt.background:               [75]black
+!URxvt.background:              black
+!URxvt.shading:                 0
+URxvt.fading:                   25
+
+URxvt.internalBorder:           5
+URxvt.externalBorder:           0
 ! }}}
 
-! vim: tw=80 fdm=marker
+! vim: tw=80 fdm=marker noet
