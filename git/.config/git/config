@@ -1,6 +1,7 @@
 [user]
 	name = Ashhar Hasan
 	email = hashhar_dev@outlook.com
+	signingkey = 11F3675C1F068B46
 [core]
 	safecrlf = warn
 	autocrlf = input
@@ -11,6 +12,7 @@
 [commit]
 	template = ~/.config/git/commit-template
 	verbose = true
+	gpgsign = true
 [credential]
 	helper = cache
 [diff]
@@ -64,3 +66,5 @@
 #	clean = "sed -e 's/hashhar_dev@outlook.com/johndoe@example.com/' | sed -e 's/Ashhar Hasan/John Doe/'"
 
 # vim: set list,fdm=marker,tw=120
+[gpg]
+	program = gpg2
