@@ -1,6 +1,6 @@
 [user]
-	name = John Doe
-	email = johndoe@example.com
+	name = Ashhar Hasan
+	email = hashhar_dev@outlook.com
 [core]
 	safecrlf = warn
 	autocrlf = input
@@ -60,7 +60,7 @@
 	pf = push -f
 
 # Filter to remove my email address
-[filter "remove-email"]
-	clean = "sed -e 's/johndoe@example.com/johndoe@example.com/' | sed -e 's/John Doe/John Doe/'"
+#[filter "remove-email"]
+#	clean = "sed -e 's/hashhar_dev@outlook.com/johndoe@example.com/' | sed -e 's/Ashhar Hasan/John Doe/'"
 
 # vim: set list,fdm=marker,tw=120
