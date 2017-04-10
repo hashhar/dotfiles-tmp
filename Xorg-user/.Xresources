@@ -12,7 +12,7 @@ URxvt.saveLines:                10000
 ! }}}
 
 ! Extensions {{{
-URxvt.perl-ext:                 default,url-select
+URxvt.perl-ext-common:          default,url-select
 
 ! Tabs (tabbed)
 URxvt.tabbed.tabbar-fg:         2
@@ -26,7 +26,6 @@ URxvt.url-select.launcher:      /usr/local/bin/firefox
 URxvt.url-select.underline:     true
 
 ! Clickable URLs (matcher)
-URxvt.perl-ext-common:          matcher
 URxvt.url-launcher:             /usr/local/bin/firefox
 URxvt.matcher.button:           1
 URxvt.matcher.rend.0:           Uline Bold fg5
