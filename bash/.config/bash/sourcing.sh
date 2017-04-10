@@ -19,4 +19,4 @@ texlive-init()
 }
 # }}}
 
-# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

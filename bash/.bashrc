@@ -15,4 +15,4 @@
 [[ -f ~/.config/bash/functions.sh ]] && . ~/.config/bash/functions.sh
 [[ -f ~/.config/bash/keybinds.sh ]] && . ~/.config/bash/keybinds.sh
 
-# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
