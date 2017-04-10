@@ -1,0 +1,47 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 5
+}
+
+order += "volume master"
+order += "disk /"
+order += "wireless wlp6s0"
+order += "ethernet enp7s0"
+order += "battery 0"
+order += "tztime local"
+
+wireless wlp6s0 {
+        format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+ethernet enp7s0 {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        format_down = "No battery"
+        status_chr = "⚡"
+        status_bat = "🔋"
+        status_unk = "?"
+        status_full = "☻"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 15
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "pulse:0"
+}
