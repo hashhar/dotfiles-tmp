@@ -4,6 +4,10 @@ alias ll='ls --group-directories-first --color=auto -hF -lA'
 alias la='ls --group-directories-first --color=auto -hF -A'
 # }}}
 
+# GPG and Keybase and SSH {{{
+alias gpg='gpg2'
+# }}}
+
 # Disk Usage {{{
 alias df='df -h'
 alias du='du -h -c'
@@ -33,6 +37,7 @@ alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
 alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
+alias pcc='xclip -selection clipboard'
 # }}}
 
 alias bc='bc -q'
@@ -62,6 +67,9 @@ alias cowfor='fortune -eac | tee >(head -n 1 >> \
     "$HOME/.fortune-category-log") | tail -n +3 | cowsay -f "$(find \
     /usr/share/cowsay/cows/ -type f | sort -R | head -1)" -W $((COLUMNS - 10))\
     | lolcat'
+alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
+alias mpccurrent='mpc current -f "[[[\e\[1;32m%title% [\e\[0mby \e\[1;32m%artist%]\e\[0m from \
+\e\[1;31m%album%]|\e\[0mFile: \e\[1;36m%file%"'
 # }}}
 
-# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4
+# vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
