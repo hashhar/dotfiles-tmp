@@ -1,5 +1,5 @@
 # Path {{{
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 # }}}
 
 # Default programs {{{
@@ -27,7 +27,7 @@ export AURDEST='/home/ashhar/makepkg/pacaur-cache/'
 # }}}
 
 # Ruby {{{
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 # }}}
 
 # WeeChat {{{
@@ -36,7 +36,7 @@ export WEECHAT_HOME='/home/ashhar/.config/weechat'
 
 # Less {{{
 export LESSHISTFILE="${XDG_DATA_HOME:="$HOME/.local/share"}/less/history"
-[ -d "$(dirname $LESSHISTFILE)" ] || mkdir -pi "$(dirname "$LESSHISTFILE")"
+[ -d "$(dirname $LESSHISTFILE)" ] || mkdir -p "$(dirname "$LESSHISTFILE")"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
