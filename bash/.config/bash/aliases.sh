@@ -70,6 +70,7 @@ alias cowfor='fortune -eac | tee >(head -n 1 >> \
 alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
 alias mpccurrent='mpc current -f "[[[\e\[1;32m%title% [\e\[0mby \e\[1;32m%artist%]\e\[0m from \
 \e\[1;31m%album%]|\e\[0mFile: \e\[1;36m%file%"'
+alias cavapulse='cava -p /home/ashhar/.config/cava/config-pulse'
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
