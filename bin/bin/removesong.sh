@@ -156,4 +156,4 @@ fi
 # Reset working directory.
 cd "$oldpwd"
 
-# vim: set tw=80 sts=4 ts=4 sw=4 et fdm=marker
+# vim: tw=80 sts=4 ts=4 sw=4 et fdm=marker
