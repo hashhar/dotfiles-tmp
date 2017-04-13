@@ -1,7 +1,7 @@
 # ls {{{
-alias ls='ls --group-directories-first --color=auto -h'
+alias ls='ls --group-directories-first --color=auto -h -A'
 alias ll='ls --group-directories-first --color=auto -hF -lA'
-alias la='ls --group-directories-first --color=auto -hF -A'
+alias sl='ls --group-directories-first --color=auto -h'
 # }}}
 
 # GPG and Keybase and SSH {{{

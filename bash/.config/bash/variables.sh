@@ -20,6 +20,8 @@ export Resources='/media/Resources'
 export Media='/media/Media'
 export Data='/media/Data'
 export GitHub="${Resources}/GitHub"
+export gitatt="${GitHub}/_ToUse/gitattributes"
+export gitig="${GitHub}/_ToUse/gitignore"
 # }}}
 
 # Pacaur {{{
