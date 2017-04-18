@@ -5,8 +5,8 @@ bg_run() {
 
 # Play a random video
 randomvideo() {
-    bg_run mpv "$(find "${1:-$HOME/Videos}" -type f -not -name "*.srt" \
-        -not -name "*.torrent" | shuf -n 1)"
+    mpv --vo=opengl --hwdec=vaapi "$(find "${1:-$HOME/Videos}" -type f \
+        -not -name "*.srt" -not -name "*.torrent" | shuf -n 1)"
 }
 
 # Personal notes app
