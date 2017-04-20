@@ -61,6 +61,18 @@ alias cd..='cd ..'
 alias vi='vim'
 # }}}
 
+# Pacman Shortcuts {{{
+alias _pacsize='expac -H M "%m\t%n" | sort -h'
+alias _pacdatelog='expac --timefmt="%Y-%m-%d %T" "%l\t%n" | sort'
+_pacfilesize()
+{
+    [ -z "$1" ] && printf '%s\n' 'Usage: _pacfilesize package-name' && return
+    pacman -Qlq $1 | grep -v '/$' | xargs du -h | sort -h
+}
+
+alias _pacchangedfiles='pacman -Qii | awk "/^MODIFIED/ {print $2}"'
+# }}}
+
 # Miscellaneous {{{
 # Cowsay Fortune
 alias cowfor='fortune -eac | tee >(head -n 1 >> \
@@ -71,6 +83,7 @@ alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
 alias mpccurrent='mpc current -f "[[[\e\[1;32m%title% [\e\[0mby \e\[1;32m%artist%]\e\[0m from \
 \e\[1;31m%album%]|\e\[0mFile: \e\[1;36m%file%"'
 alias cavapulse='cava -p /home/ashhar/.config/cava/config-pulse'
+alias mpv='mpv --vo=opengl --hwdec=vaapi'
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

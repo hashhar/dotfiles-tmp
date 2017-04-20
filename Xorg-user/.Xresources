@@ -165,7 +165,7 @@ Xft.dpi:                        100
 !URxvt.font:                    xft:Consolas:size=11
 !URxvt.letterSpace:             -2
 ! Tamzen
-URxvt.font:                     xft:TamzenForPowerline:size=12
+URxvt.font:                     xft:TamzenForPowerline:size=12,xft:Fira Mono
 URxvt.letterSpace:              0
 
 URxvt.skipBuiltinGlyphs:        false
