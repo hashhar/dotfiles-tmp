@@ -2,6 +2,7 @@
 alias ls='ls --group-directories-first --color=auto -h -A'
 alias ll='ls --group-directories-first --color=auto -hF -lA'
 alias sl='ls --group-directories-first --color=auto -h'
+alias tree='tree -C'
 # }}}
 
 # GPG and Keybase and SSH {{{
