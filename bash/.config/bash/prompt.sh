@@ -1,5 +1,6 @@
 # Prompt {{{
 PS1='[\u@\h \W]\$ '
+export PROMPT_DIRTRIM=0
 
 bash_prompt_command()
 {
