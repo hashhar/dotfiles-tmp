@@ -30,6 +30,7 @@ bash_prompt_command()
 }
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

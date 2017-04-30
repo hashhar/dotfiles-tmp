@@ -49,4 +49,8 @@ export GPG_TTY=$(tty)
 export VDPAU_DRIVER='va_gl'
 # }}}
 
+# Hstr config {{{
+export HH_CONFIG=hicolor
+# }}}
+
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

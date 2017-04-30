@@ -9,7 +9,6 @@ shopt -s lithist
 # }}}
 
 # History {{{
-export HISTCMD
 export HISTCONTROL='ignorespace:erasedups'
 export HISTFILESIZE='10000'
 export HISTSIZE='10000'
