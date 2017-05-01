@@ -260,6 +260,15 @@ bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
 # }}}
 
 # Startup Commands {{{
+# Dropdown Terminal {{{
+exec          urxvt -name dropdown -geometry 100x10
+for_window [instance="dropdown" \
+            class="URxvt"]                  floating enable move absolute position 250 0
+for_window [instance="dropdown" \
+            class="URxvt"]                  move scratchpad
+bindsym       grave [instance="dropdown" \
+                     class="URxvt"]         scratchpad show
+# }}}
 # }}}
 
 # Gaps {{{
@@ -316,4 +325,4 @@ mode "$mode_gaps_outer" {
 # Vim macro for aligning stuff
 # 0w100i dwW100i dwj
 # 0w100i dwj
-# vim: colorcolumn=120 fdm=marker tw=120
+# vim: colorcolumn=15,45,120 fdm=marker tw=120
