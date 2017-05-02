@@ -1,5 +1,9 @@
+# Ruby {{{
+#[ -n "$GEM_HOME" ] || export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
+# }}}
+
 # Path {{{
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#[ -n "$(command -v bundler)" ] || export PATH="$GEM_HOME/bin:$PATH"
 # }}}
 
 # Default programs {{{
@@ -26,10 +30,6 @@ export gitig="${GitHub}/_ToUse/gitignore"
 
 # Pacaur {{{
 export AURDEST="$HOME/makepkg/pacaur-cache/"
-# }}}
-
-# Ruby {{{
-export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
 # }}}
 
 # WeeChat {{{
