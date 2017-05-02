@@ -21,7 +21,9 @@ bind '"\eOd": backward-word'
 # }}}
 
 # Hstr {{{
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hh -- \C-j"'; fi
+if [[ $- =~ .*i.* ]]; then
+    bind '"\C-r": "\C-a hh -- \C-j"'
+fi
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

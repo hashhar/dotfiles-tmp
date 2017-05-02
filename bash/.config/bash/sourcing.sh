@@ -1,20 +1,17 @@
 # NVM {{{
-nvm-init()
-{
+nvm-init() {
     . /usr/share/nvm/init-nvm.sh
 }
 # }}}
 
 # Miniconda {{{
-conda-init()
-{
+conda-init() {
     . /media/Resources/major-project/load_conda.sh
 }
 # }}}
 
 # TexLive {{{
-texlive-init()
-{
+texlive-init() {
     . /media/Data/load_tex.sh
 }
 # }}}
