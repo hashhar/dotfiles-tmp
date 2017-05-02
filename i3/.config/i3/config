@@ -262,13 +262,15 @@ bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
 # Startup Commands {{{
 # Dropdown Terminal {{{
 exec          urxvt -name dropdown -geometry 100x10
-for_window [instance="dropdown" \
-            class="URxvt"]                  floating enable move absolute position 250 0
-for_window [instance="dropdown" \
-            class="URxvt"]                  move scratchpad
-bindsym       grave [instance="dropdown" \
-                     class="URxvt"]         scratchpad show
+for_window [instance="dropdown" class="URxvt"] \
+                                            floating enable move absolute position 250 0
+for_window [instance="dropdown" class="URxvt"] \
+                                            move scratchpad
+bindsym       $mod+grave [instance="dropdown" class="URxvt"] \
+                                            scratchpad show
 # }}}
+
+exec          bash -c "cd ~/.config/conky && conky"
 # }}}
 
 # Gaps {{{
