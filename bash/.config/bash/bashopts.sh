@@ -5,11 +5,10 @@ shopt -s checkhash
 shopt -s checkjobs
 shopt -s globstar
 shopt -s histappend
-shopt -s lithist
 # }}}
 
 # History {{{
-export HISTCONTROL='ignorespace:erasedups'
+export HISTCONTROL='ignorespace:ignoredups'
 export HISTFILESIZE='10000'
 export HISTSIZE='10000'
 export HISTTIMEFORMAT='%F %T '
