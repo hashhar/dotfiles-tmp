@@ -25,24 +25,24 @@ export gitig="${GitHub}/_ToUse/gitignore"
 # }}}
 
 # Pacaur {{{
-export AURDEST='/home/ashhar/makepkg/pacaur-cache/'
+export AURDEST="$HOME/makepkg/pacaur-cache/"
 # }}}
 
 # Ruby {{{
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
 # }}}
 
 # WeeChat {{{
-export WEECHAT_HOME='/home/ashhar/.config/weechat'
+export WEECHAT_HOME="$HOME/.config/weechat"
 # }}}
 
 # Less {{{
 export LESSHISTFILE="${XDG_DATA_HOME:="$HOME/.local/share"}/less/history"
-[ -d "$(dirname $LESSHISTFILE)" ] || mkdir -p "$(dirname "$LESSHISTFILE")"
+[ -d "$(dirname "$LESSHISTFILE")" ] || mkdir -p "$(dirname "$LESSHISTFILE")"
 # }}}
 
 # GPG {{{
-export GPG_TTY=$(tty)
+export GPG_TTY="$(tty)"
 # }}}
 
 # VDPAU Hardware Video Acceleration {{{
@@ -50,7 +50,7 @@ export VDPAU_DRIVER='va_gl'
 # }}}
 
 # Hstr config {{{
-export HH_CONFIG=hicolor
+export HH_CONFIG='hicolor'
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
