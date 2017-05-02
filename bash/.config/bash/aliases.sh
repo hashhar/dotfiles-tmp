@@ -42,7 +42,7 @@ alias pcc='xclip -selection clipboard'
 # }}}
 
 alias bc='bc -q'
-alias lock='~/.config/i3/scripts/lock.sh'
+alias lock='"$HOME/.config/i3/scripts/lock.sh"'
 
 # Privileged Access {{{
 if [ $UID -ne 0 ]; then
@@ -75,15 +75,14 @@ alias _pacchangedfiles='pacman -Qii | awk "/^MODIFIED/ {print $2}"'
 # }}}
 
 # Miscellaneous {{{
-# Cowsay Fortune
 alias cowfor='fortune -eac | tee >(head -n 1 >> \
     "$HOME/.fortune-category-log") | tail -n +3 | cowsay -f "$(find \
-    /usr/share/cowsay/cows/ -type f | sort -R | head -1)" -W $((COLUMNS - 10))\
-    | lolcat'
+    /usr/share/cowsay/cows/ -type f | sort -R | head -1)" \
+    -W $(($(tput cols) - 10)) | lolcat'
 alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
-alias mpccurrent='mpc current -f "[[[\e\[1;32m%title% [\e\[0mby \e\[1;32m%artist%]\e\[0m from \
-\e\[1;31m%album%]|\e\[0mFile: \e\[1;36m%file%"'
-alias cavapulse='cava -p /home/ashhar/.config/cava/config-pulse'
+alias mpccurrent='mpc current -f "[[[\e\[1;32m%title% [\e\[0mby \
+\e\[1;32m%artist%]\e\[0m from \e\[1;31m%album%]|\e\[0mFile: \e\[1;36m%file%"'
+alias cavapulse='cava -p "$HOME/.config/cava/config-pulse"'
 alias mpv='mpv --vo=opengl --hwdec=vaapi'
 # }}}
 
