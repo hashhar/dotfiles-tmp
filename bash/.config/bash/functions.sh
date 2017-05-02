@@ -11,34 +11,32 @@ randomvideo() {
 
 # Personal notes app
 note() {
+    local file="$HOME/note"
     case $@ in
-        "-e") vim ~/note;;
-          "") cat ~/note | less;;
-           *) printf "$(date +%F\ %T): $@\n" >> ~/note
+        "-e") vim "$file";;
+          "") cat "$file" | less;;
+           *) printf "$(date +%F\ %T): $@\n" >> "$file"
               printf "\"$@\" added to your notes.\n";;
     esac
 }
 
 # Personal todo app
 todo() {
-    if [[ ! -f $HOME/todo ]]; then
-        touch "$HOME/todo"
+    local file="$HOME/todo"
+    if [[ ! -f "$file" ]]; then
+        touch "$file"
     fi
 
-    if ! (($#)); then
-        cat "$HOME/todo"
-    elif [[ "$1" == "-l" ]]; then
-        nl -b a "$HOME/todo"
-    elif [[ "$1" == "-c" ]]; then
-        > $HOME/todo
-    elif [[ "$1" == "-r" ]]; then
-        nl -b a "$HOME/todo"
-        eval printf %.0s- '{1..'"${COLUMNS:-$(tput cols)}"\}; echo
-        read -p "Type a number to remove: " number
-        sed -i ${number}d $HOME/todo "$HOME/todo"
-    else
-        printf "%s\n" "$*" >> "$HOME/todo"
-    fi
+    case $@ in
+        "-l") nl -b a "$file";;
+        "-c") >"$file";;
+        "-r") nl -b a "$file"
+              eval printf %.0s- '{1..'"${COLUMNS:-$(tput cols)}"\}; echo
+              read -p "Type a number to remove: " number
+              sed -i ${number}d "$file" "$file";;
+          "") cat "$file";;
+           *) printf "%s\n" "$*" >> "$file";;
+    esac
 }
 
 # Simple calculator
@@ -56,14 +54,18 @@ findinpath() {
 
 # Now playing song info
 nowplaying() {
-    cb=$(tput bold)
-    cc=$(tput sgr0)
-    cbg=${cb}$(tput setaf 2)
-    cbr=${cb}$(tput setaf 1)
-    # Plain String: [[[Title:\t%title%\n]Artist:\t%artist%\n]Album:\t%album%]|File:\t%file%
+    local cb=$(tput bold)
+    local cc=$(tput sgr0)
+    local cbg=${cb}$(tput setaf 2)
+    local cbr=${cb}$(tput setaf 1)
+    # Plain String:
+    # [[[Title:\t%title%\n]Artist:\t%artist%\n]Album:\t%album%]|File:\t%file%
     # Coloured String:
-    # [[[\e\[1;32mTitle:\e\[0m\t%title%\n]\e\[1;32mArtist:\e\[0m\t%artist%\n]\e\[1;32mAlbum:\e\[0m\t%album%]|\e\[1;31mFile:\e\[0m\t%file%
-    mpc current -f "[[[\e\[1;32mTitle:\e\[0m\t%title%\n]\e\[1;32mArtist:\e\[0m\t%artist%\n]\e\[1;32mAlbum:\e\[0m\t%album%]|\e\[1;31mFile:\e\[0m\t%file%"
+    # [[[\e\[1;32mTitle:\e\[0m\t%title%\n]\e\[1;32mArtist:\
+#\e\[0m\t%artist%\n]\e\[1;32mAlbum:\e\[0m\t%album%]|\e\[1;31mFile:\e\[0m\t%file%
+    local fmt="[[[\e\[1;32mTitle:\e\[0m\t%title%\n]\e\[1;32mArtist:\
+\e\[0m\t%artist%\n]\e\[1;32mAlbum:\e\[0m\t%album%]|\e\[1;31mFile:\e\[0m\t%file%"
+    mpc current -f "$fmt"
 }
 
 # Command not found handler
