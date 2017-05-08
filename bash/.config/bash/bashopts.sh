@@ -11,7 +11,7 @@ shopt -s histappend
 export HISTCONTROL='ignorespace:erasedups'
 export HISTFILESIZE='10000'
 export HISTSIZE='10000'
-export HISTTIMEFORMAT='%F %T '
+#export HISTTIMEFORMAT='%F %T '
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
