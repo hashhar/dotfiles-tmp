@@ -38,7 +38,7 @@ bash_prompt_command()
 }
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
-export PROMPT_COMMAND="history -a; history -n; dedup; ${PROMPT_COMMAND}"
+export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n; dedup"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
