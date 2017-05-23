@@ -235,11 +235,11 @@ bindsym       $mod+Return                   exec i3-sensible-terminal
 
 # Function Keys {{{
 # Pulse Audio controls
-bindsym       XF86AudioRaiseVolume          exec --no-startup-id pamixer -i 5
-bindsym       $mod1+XF86AudioRaiseVolume    exec --no-startup-id pamixer -i 5 --allow-boost
+bindsym       XF86AudioRaiseVolume          exec --no-startup-id pamixer -i 2
+bindsym       $mod1+XF86AudioRaiseVolume    exec --no-startup-id pamixer -i 2 --allow-boost
 
-bindsym       XF86AudioLowerVolume          exec --no-startup-id pamixer -d 5
-bindsym       $mod1+XF86AudioLowerVolume    exec --no-startup-id pamixer -d 5 --allow-boost
+bindsym       XF86AudioLowerVolume          exec --no-startup-id pamixer -d 2
+bindsym       $mod1+XF86AudioLowerVolume    exec --no-startup-id pamixer -d 2 --allow-boost
 
 bindsym       XF86AudioMute                 exec --no-startup-id pamixer -t
 
