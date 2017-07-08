@@ -12,6 +12,10 @@ randomvideo() {
 # Personal notes app
 note() {
     local file="$HOME/note"
+    if [[ ! -f "$file" ]]; then
+        touch "$file"
+    fi
+
     case $@ in
         "-e") vim "$file";;
           "") cat "$file" | less;;

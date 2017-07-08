@@ -2,7 +2,7 @@
 
 # Customize these parameters {{{
 temp_file='/tmp/mirrors.json'
-num_mirrors=10
+num_mirrors=1000
 
 # See https://www.archlinux.org/mirrors/status/ for meaning of these
 country='all'      # all, or a name (uses regex matching, so input accordingly)

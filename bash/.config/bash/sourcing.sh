@@ -4,12 +4,6 @@ nvm-init() {
 }
 # }}}
 
-# Miniconda {{{
-conda-init() {
-    . /media/Resources/major-project/load_conda.sh
-}
-# }}}
-
 # TexLive {{{
 texlive-init() {
     . /media/Data/load_tex.sh
