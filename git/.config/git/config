@@ -1,7 +1,7 @@
 [user]
 	name = Ashhar Hasan
 	email = hashhar_dev@outlook.com
-	signingkey = 11F3675C1F068B46
+	signingkey = 4CD0188E0E5784EF
 [core]
 	safecrlf = warn
 	autocrlf = input

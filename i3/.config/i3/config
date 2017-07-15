@@ -271,6 +271,7 @@ bindsym       $mod+grave [instance="dropdown" class="URxvt"] \
 # }}}
 
 exec          bash -c "cd ~/.config/conky && conky"
+exec          compton
 # }}}
 
 # Gaps {{{
