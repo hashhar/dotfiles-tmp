@@ -1,10 +1,10 @@
 # Completion {{{
-bind TAB:menu-complete
-bind \C-space:complete
+bind 'TAB: menu-complete'
+bind '\C-space: complete'
 
 # Complete current command using history
-# bind '"\e[A": history-search-backward'
-# bind '"\e[B": history-search-forward'
+bind '"\C-p": history-search-backward'
+bind '"\C-n": history-search-forward'
 # }}}
 
 # Macros {{{

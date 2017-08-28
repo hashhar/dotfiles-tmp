@@ -4,9 +4,10 @@ export PROMPT_DIRTRIM=0
 
 dedup()
 {
+    temp="$(mktemp)"
     nl ~/.bash_history | sort -k2 -k 1,1nr | uniq -f1 | sort -n | \
-        cut -f2 > /tmp/historyfile
-    mv /tmp/historyfile ~/.bash_history
+        cut -f2 > "$temp"
+    mv "$temp" ~/.bash_history
 }
 
 bash_prompt_command()
@@ -20,8 +21,8 @@ bash_prompt_command()
 
     local UC=$G                          # user's color
     local EC=$R                          # user's exit color
-    (($(id -u) == 0)) && local UC=$R   # root's color
-    (($(id -u) == 0)) && local EC=$G   # root's exit color
+    (($(id -u) == 0)) && local UC=$R     # root's color
+    (($(id -u) == 0)) && local EC=$G     # root's exit color
 
     local force_color_prompt=yes
     local trailing=""
@@ -35,6 +36,7 @@ bash_prompt_command()
     else
         PS1="\w \\$ "
     fi
+    #PS1+="\[\033]0;\]$USER@$HOSTNAME: \w\[\007\]"
 }
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command

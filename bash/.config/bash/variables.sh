@@ -1,35 +1,23 @@
-# Ruby {{{
-#[ -n "$GEM_HOME" ] || export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
-# }}}
-
 # Path {{{
-#[ -n "$(command -v bundler)" ] || export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 # }}}
 
 # Default programs {{{
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Browser {{{
 if [[ -n "$DISPLAY" ]]; then
-    export BROWSER=firefox
+    export BROWSER=nightly
 else
     export BROWSER=elinks
 fi
 # }}}
 # }}}
 
-# Mount point variables {{{
-export Resources='/media/Resources'
-export Media='/media/Media'
-export Data='/media/Data'
-export GitHub="${Resources}/GitHub"
-export gitatt="${GitHub}/_ToUse/gitattributes"
-export gitig="${GitHub}/_ToUse/gitignore"
-# }}}
-
-# Pacaur {{{
-export AURDEST="$HOME/makepkg/pacaur-cache/"
+# Frequently used directory variables {{{
+export gitatt="$HOME/src/_touse/gitattributes"
+export gitig="$HOME/src/_touse/gitignore"
 # }}}
 
 # WeeChat {{{
@@ -51,6 +39,13 @@ export VDPAU_DRIVER='va_gl'
 
 # Hstr config {{{
 export HH_CONFIG='hicolor'
+# }}}
+
+# Golang {{{
+export GOROOT="/usr/local/go"
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
