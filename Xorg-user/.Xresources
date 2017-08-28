@@ -159,14 +159,15 @@ Xft.dpi:                        100
 !URxvt.font:                    xft:xos4 Terminus
 !URxvt.letterSpace:             0
 ! Fira Mono
-!URxvt.font:                    xft:Fira Mono:size=10
-!URxvt.letterSpace:             -2
+URxvt.font:                    xft:Fira Mono:size=10
+URxvt.letterSpace:             -1
+URxvt.lineSpace:               0.1
 ! Consolas
 !URxvt.font:                    xft:Consolas:size=11
 !URxvt.letterSpace:             -2
 ! Tamzen
-URxvt.font:                     xft:TamzenForPowerline:size=12,xft:Fira Mono
-URxvt.letterSpace:              0
+!URxvt.font:                     xft:TamzenForPowerline:size=12,xft:Fira Mono
+!URxvt.letterSpace:              0
 
 URxvt.skipBuiltinGlyphs:        false
 ! }}}
