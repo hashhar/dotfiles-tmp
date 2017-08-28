@@ -35,9 +35,35 @@ EOF
 }
 # }}}
 
+# Colours {{{
+initializeColours() {
+    # Check if stdout is a terminal.
+    if [ -t 1 ]; then
+        # See if it supports colors.
+        ncolors="$(tput colors)"
+        if [ -n "$ncolors" ] && (( ncolors > 8 )); then
+            cb="$(tput bold)"
+            cu="$(tput smul)"
+            cc="$(tput sgr0)"
+            cr="$(tput setaf 1)"; cbr="$cb$(tput setaf 1)"
+            cg="$(tput setaf 2)"; cbg="$cb$(tput setaf 2)"
+        else
+            cb="$(tput bold)"
+            cu="$(tput smul)"
+            cc="$(tput sgr0)"
+            cr="$cb"; cbr="$cb"
+            cg="$cb"; cbg="$cb"
+        fi
+    fi
+}
+# }}}
+
+scriptname='diceware.sh'
+
+initializeColours
 wordlists=('/usr/share/dict/words'
            '/usr/share/dict/cracklib-small')
 
-for wordlist in ${wordlists[@]}; do
-    [[ -f "$wordlist" ]] && shuf -n${1:-4} "$wordlist" && break
+for wordlist in "${wordlists[@]}"; do
+    [[ -f "$wordlist" ]] && shuf -n"${1:-4}" "$wordlist" && break
 done

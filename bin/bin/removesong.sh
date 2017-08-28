@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Description:  Deletes or moves the currently playing file in mpd.
 # Dependencies: mpc, mpd
@@ -39,7 +39,7 @@ initializeColours() {
     if [ -t 1 ]; then
         # See if it supports colors.
         ncolors=$(tput colors)
-        if [ -n "$ncolors" ] && (( $ncolors > 8 )); then
+        if [ -n "$ncolors" ] && (( ncolors > 8 )); then
             cb="$(tput bold)"
             cu="$(tput smul)"
             cc="$(tput sgr0)"
@@ -65,8 +65,8 @@ oldpwd=$(pwd)
 cd /
 
 # Check for dependencies {{{
-[ ! $(command -v mpc) ] && printf "${cbr}ERROR${cc}: mpc is needed.\n"
-[ ! $(command -v mpd) ] && printf "${cbr}ERROR${cc}: mpd is needed.\n"
+[ ! "$(command -v mpc)" ] && printf "${cbr}ERROR${cc}: mpc is needed.\n"
+[ ! "$(command -v mpd)" ] && printf "${cbr}ERROR${cc}: mpd is needed.\n"
 # }}}
 
 # Default options {{{
@@ -147,13 +147,15 @@ fi
 
 # Perform the functions {{{
 if [ "$action" = "move" ]; then
-    mv "$interactive" "$music_dir/$(mpc current -f %file%)" "$move_location/"
+    mv "$interactive" "$music_dir/$(mpc current -f %file%)" "$move_location/" && \
+        cd "$oldpwd" && \
+        exit 0
 else
-    rm "$interactive" "$music_dir/$(mpc current -f %file%)"
+    rm "$interactive" "$music_dir/$(mpc current -f %file%)" && \
+        cd "$oldpwd" && \
+        exit 0
 fi
+exit 1
 # }}}
-
-# Reset working directory.
-cd "$oldpwd"
 
 # vim: tw=80 sts=4 ts=4 sw=4 et fdm=marker
