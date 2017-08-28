@@ -1,14 +1,14 @@
 [user]
 	name = Ashhar Hasan
-	email = hashhar_dev@outlook.com
+	email = ashhar.hasan@jabong.com
 	signingkey = 4CD0188E0E5784EF
 [core]
 	safecrlf = warn
 	autocrlf = input
 	excludesFile = ~/.config/git/ignore
 	attributesFile = ~/.config/git/attributes
-	# Specify a minimal vimrc for git using -U ~/.vimini
-	editor = vim
+	# Specify a minimal vimrc for git using -u ~/.vimini
+	editor = nvim -u ~/.config/git/vimrc
 [commit]
 	template = ~/.config/git/commit-template
 	verbose = true
@@ -61,12 +61,7 @@
 	p = push
 	pf = push -f
 
-# Filter to remove my email address
-#[filter "remove-email"]
-#	clean = "sed -e 's/hashhar_dev@outlook.com/johndoe@example.com/' | sed -e 's/Ashhar Hasan/John Doe/'"
-
-# vim: set list,fdm=marker,tw=120
 [gpg]
 	program = gpg2
-[url "https://github.com/"]
-	insteadOf = git://github.com/
+
+# vim: set list,fdm=marker,tw=120
