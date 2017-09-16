@@ -176,7 +176,7 @@ URxvt.skipBuiltinGlyphs:        false
 URxvt.depth:                    32
 URxvt.urgentOnBell:             true
 ! Transparent background
-URxvt.background:               [75]black
+URxvt.background:               [80]black
 !URxvt.background:              black
 !URxvt.shading:                 0
 URxvt.fading:                   25
