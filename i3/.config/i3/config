@@ -132,9 +132,20 @@ set           $ws7                          "7:"
 set           $ws8                          "8:"
 set           $ws9                          "9:"
 set           $ws10                         "10: "
+
+set           $ws1_1                        "1:  "
+set           $ws2_1                        "2:  "
+set           $ws3_1                        "3:  "
+set           $ws4_1                        "4:  "
+set           $ws5_1                        "5:  "
+set           $ws6_1                        "6:  "
+set           $ws7_1                        "7:  "
+set           $ws8_1                        "8:  "
+set           $ws9_1                        "9:  "
+set           $ws10_1                       "10:   "
 # }}}
 
-# Switch to workspace
+# Switch to workspace {{{
 bindsym       $mod+1                        workspace $ws1
 bindsym       $mod+2                        workspace $ws2
 bindsym       $mod+3                        workspace $ws3
@@ -146,7 +157,19 @@ bindsym       $mod+8                        workspace $ws8
 bindsym       $mod+9                        workspace $ws9
 bindsym       $mod+0                        workspace $ws10
 
-# Move focused container to workspace
+bindsym       $mod1+1                       workspace $ws1_1
+bindsym       $mod1+2                       workspace $ws2_1
+bindsym       $mod1+3                       workspace $ws3_1
+bindsym       $mod1+4                       workspace $ws4_1
+bindsym       $mod1+5                       workspace $ws5_1
+bindsym       $mod1+6                       workspace $ws6_1
+bindsym       $mod1+7                       workspace $ws7_1
+bindsym       $mod1+8                       workspace $ws8_1
+bindsym       $mod1+9                       workspace $ws9_1
+bindsym       $mod1+0                       workspace $ws10_1
+# }}}
+
+# Move focused container to workspace {{{
 bindsym       $mod+Shift+1                  move container to workspace $ws1
 bindsym       $mod+Shift+2                  move container to workspace $ws2
 bindsym       $mod+Shift+3                  move container to workspace $ws3
@@ -157,6 +180,18 @@ bindsym       $mod+Shift+7                  move container to workspace $ws7
 bindsym       $mod+Shift+8                  move container to workspace $ws8
 bindsym       $mod+Shift+9                  move container to workspace $ws9
 bindsym       $mod+Shift+0                  move container to workspace $ws10
+
+bindsym       $mod1+Shift+1                 move container to workspace $ws1_1
+bindsym       $mod1+Shift+2                 move container to workspace $ws2_1
+bindsym       $mod1+Shift+3                 move container to workspace $ws3_1
+bindsym       $mod1+Shift+4                 move container to workspace $ws4_1
+bindsym       $mod1+Shift+5                 move container to workspace $ws5_1
+bindsym       $mod1+Shift+6                 move container to workspace $ws6_1
+bindsym       $mod1+Shift+7                 move container to workspace $ws7_1
+bindsym       $mod1+Shift+8                 move container to workspace $ws8_1
+bindsym       $mod1+Shift+9                 move container to workspace $ws9_1
+bindsym       $mod1+Shift+0                 move container to workspace $ws10_1
+# }}}
 # }}}
 
 # Reloading Configuration {{{
@@ -206,7 +241,7 @@ bindsym       $mod+b                        bar mode toggle
 
 bar {
               i3bar_command                 i3bar
-              status_command                i3status
+              status_command                ~/.config/i3/scripts/bar.sh
               font                          pango:Fira Sans, FontAwesome, PowerlineSymbols 8
               modifier                      $mod1
               tray_output                   primary
@@ -235,17 +270,9 @@ bindsym       $mod+Return                   exec i3-sensible-terminal
 
 # Function Keys {{{
 # Pulse Audio controls
-bindsym       XF86AudioRaiseVolume          exec --no-startup-id pamixer -i 2
-bindsym       $mod1+XF86AudioRaiseVolume    exec --no-startup-id pamixer -i 2 --allow-boost
-
-bindsym       XF86AudioLowerVolume          exec --no-startup-id pamixer -d 2
-bindsym       $mod1+XF86AudioLowerVolume    exec --no-startup-id pamixer -d 2 --allow-boost
-
-bindsym       XF86AudioMute                 exec --no-startup-id pamixer -t
-
-# Sreen brightness controls
-bindsym       XF86MonBrightnessUp           exec --no-startup-id xbacklight -inc 5
-bindsym       XF86MonBrightnessDown         exec --no-startup-id xbacklight -dec 5
+bindsym       XF86AudioRaiseVolume          exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym       XF86AudioLowerVolume          exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym       XF86AudioMute                 exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Media player controls
 bindsym       XF86AudioPlay                 exec --no-startup-id mpc toggle
@@ -261,7 +288,7 @@ bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
 
 # Startup Commands {{{
 # Dropdown Terminal {{{
-exec          urxvt -name dropdown -geometry 100x10
+exec          urxvt -name dropdown -geometry 100x15
 for_window [instance="dropdown" class="URxvt"] \
                                             floating enable move absolute position 250 0
 for_window [instance="dropdown" class="URxvt"] \
@@ -270,8 +297,13 @@ bindsym       $mod+grave [instance="dropdown" class="URxvt"] \
                                             scratchpad show
 # }}}
 
-exec          bash -c "cd ~/.config/conky && conky"
+exec          setxkbmap -option ctrl:nocaps
 exec          compton
+
+# Personalization {{{
+exec          bash -c "cd ~/.config/conky && conky"
+exec          ~/.fehbg
+# }}}
 # }}}
 
 # Gaps {{{
@@ -283,6 +315,10 @@ gaps          outer                         0
 workspace     $ws1                          gaps inner 0
 workspace     $ws6                          gaps inner 0
 workspace     $ws9                          gaps inner 0
+
+workspace     $ws1_1                        gaps inner 0
+workspace     $ws6_1                        gaps inner 0
+workspace     $ws9_1                        gaps inner 0
 
 # Gaps Mode {{{
 set           $mode_gaps                    Gaps: (o) outer, (i) inner
@@ -326,6 +362,6 @@ mode "$mode_gaps_outer" {
 # }}}
 
 # Vim macro for aligning stuff
-# 0w100i dwW100i dwj
-# 0w100i dwj
+# 0w100i 15|dwW100i 45|dwj
+# 0w100i 15|dwj
 # vim: colorcolumn=15,45,120 fdm=marker tw=120
