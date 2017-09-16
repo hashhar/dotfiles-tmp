@@ -9,8 +9,8 @@ shopt -s histappend
 
 # History {{{
 export HISTCONTROL='ignorespace:erasedups'
-export HISTFILESIZE='10000'
-export HISTSIZE='10000'
+export HISTFILESIZE='100000'
+export HISTSIZE='100000'
 #export HISTTIMEFORMAT='%F %T '
 # }}}
 

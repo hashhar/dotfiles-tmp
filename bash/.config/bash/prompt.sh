@@ -4,7 +4,7 @@ export PROMPT_DIRTRIM=0
 
 dedup()
 {
-    temp="$(mktemp)"
+    temp="/tmp/.hist"
     nl ~/.bash_history | sort -k2 -k 1,1nr | uniq -f1 | sort -n | \
         cut -f2 > "$temp"
     mv "$temp" ~/.bash_history
