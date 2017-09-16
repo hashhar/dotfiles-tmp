@@ -27,11 +27,12 @@ EOF
 
 # Extract paths and define artwork size {{{
 nowplaying_path="$HOME/Music/$current_file"
+artist_album="$(mpc current -f "[[[%artist%]|%albumartist%]/%album%]")"
 artwork_size='96x96'
 
 # Replace all slashes with pipes in the artist_album and song name
-artwork_cache="$HOME/.cache/artwork/$artwork_size/"
-artwork_file="$artwork_cache/${nowplaying_path//\//|}.png"
+artwork_cache="$HOME/.cache/artwork/$artwork_size/${artist_album//\//|}"
+artwork_file="$artwork_cache/${current_file_name//\//|}.png"
 # }}}
 
 # Extract artwork if not already cached {{{
