@@ -300,6 +300,9 @@ bindsym       $mod+grave [instance="dropdown" class="URxvt"] \
 exec          setxkbmap -option ctrl:nocaps
 exec          compton
 
+# Cleanup terminal history
+exec          ~/bin/cleanup_bash_hist.sh
+
 # Personalization {{{
 exec          bash -c "cd ~/.config/conky && conky"
 exec          ~/.fehbg

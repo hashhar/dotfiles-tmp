@@ -2,14 +2,6 @@
 PS1='[\u@\h \W]\$ '
 export PROMPT_DIRTRIM=0
 
-dedup()
-{
-    temp="/tmp/.hist"
-    nl ~/.bash_history | sort -k2 -k 1,1nr | uniq -f1 | sort -n | \
-        cut -f2 > "$temp"
-    mv "$temp" ~/.bash_history
-}
-
 bash_prompt_command()
 {
     local exit_code=$?
@@ -40,7 +32,7 @@ bash_prompt_command()
 }
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
-export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n; dedup"
+export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
