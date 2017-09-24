@@ -4,6 +4,10 @@ filter()
 {
 	patterns=("cd*" \
 		"git status" \
+		"git push*" \
+		"git log*" \
+		"git diff*" \
+		"git stash*" \
 		"man*" \
 		"rm*" \
 		"nvim*" \
