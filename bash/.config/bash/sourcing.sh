@@ -7,6 +7,10 @@ source "$fasd_cache"
 unset fasd_cache
 # }}}
 
+# Commacd {{{
+source "$HOME/bin/commacd.sh"
+# }}}
+
 # Completions {{{
 if ! shopt -oq posix; then
     if [ -f /usr/share/bash-completion/bash_completion ]; then
