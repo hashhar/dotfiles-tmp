@@ -59,6 +59,10 @@ alias :Q='exit'
 alias :x='exit'
 alias quit='exit'
 alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 alias vi='nvim'
 # }}}
 
