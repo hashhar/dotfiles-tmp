@@ -79,4 +79,9 @@ alias mpv='mpv --vo=opengl --hwdec=vaapi'
 alias nv='a -e nvim'
 # }}}
 
+# SSH and SCP {{{
+alias sshp='ssh -o "PubkeyAuthentication no"'
+alias scpp='scp -o "PubkeyAuthentication no"'
+# }}}
+
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

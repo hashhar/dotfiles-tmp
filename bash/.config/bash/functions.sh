@@ -50,4 +50,40 @@ findinpath() {
     done
 }
 
+#copy and go to dir
+function cpg() {
+    if [ -d "$2" ];then
+        cp "$1" "$2" && cd "$2"
+    else
+        cp "$1" "$2"
+    fi
+}
+
+#move and go to dir
+function mvg() {
+    if [ -d "$2" ];then
+        mv "$1" "$2" && cd "$2"
+    else
+        mv "$1" "$2"
+    fi
+}
+
+# mkdir and go to dir
+function mkdirg() {
+    mkdir -p "$1"
+    cd "$1"
+}
+
+# Manually Pause/Unpause Firefox Process with POSIX-Signals
+# Suspends all Firefox Threads. Results in Zero CPU load.
+# Useful when having 100+ Tabs open and you temporarily need the power elsewhere.
+# Be careful - might produce RACE CONDITIONS or LOCKUPS in other processes or FF itself.
+function ffs() {
+    killall -STOP -m nightly
+}
+
+function ffc() {
+    killall -CONT -m nightly
+}
+
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
