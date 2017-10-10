@@ -303,6 +303,8 @@ bindsym       $mod+grave [instance="dropdown" class="URxvt"] \
 
 exec          setxkbmap -option ctrl:nocaps
 exec          compton
+exec          nm-applet
+exec          systemctl --user start psd
 
 # Cleanup terminal history
 exec          ~/bin/cleanup_bash_hist.sh
