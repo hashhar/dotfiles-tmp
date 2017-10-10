@@ -51,6 +51,6 @@ if [[ ! -e "$artwork_file" ]]; then
 fi
 # }}}
 
-notify-send -t 5000 "MPD" "$notify_fmt" -i "$artwork_file"
+notify-send -t 2000 "MPD" "$notify_fmt" -i "$artwork_file"
 
 # vim: set fdm=marker fen
