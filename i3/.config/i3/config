@@ -283,6 +283,10 @@ bindsym       $mod1+XF86AudioNext           exec --no-startup-id mpc seek +30
 
 bindsym       XF86AudioPrev                 exec --no-startup-id mpc prev
 bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
+
+# Brightness
+bindsym       XF86MonBrightnessUp           exec --no-startup-id ~/.local/src/acpilight/xbacklight -inc 5
+bindsym       XF86MonBrightnessDown         exec --no-startup-id ~/.local/src/acpilight/xbacklight -dec 5
 # }}}
 # }}}
 
