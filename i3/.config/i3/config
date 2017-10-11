@@ -239,10 +239,10 @@ bindsym       $mod+m                        mode "mpd"
 
 mode "mpd" {
               # Basic controls (ncmpcpp bindings)
-              bindsym                       p            exec mpc toggle
-              bindsym                       s            exec mpc stop
-              bindsym                       Shift+comma  exec mpc prev
-              bindsym                       Shift+period exec mpc next
+              bindsym                       p            exec mpc toggle; exec killall -USR1 i3status
+              bindsym                       s            exec mpc stop; exec killall -USR1 i3status
+              bindsym                       Shift+comma  exec mpc prev; exec killall -USR1 i3status
+              bindsym                       Shift+period exec mpc next; exec killall -USR1 i3status
 
               # Volume controls
               bindsym                       Shift+=      exec mpc volume +2
@@ -310,14 +310,14 @@ bindsym       XF86AudioLowerVolume          exec --no-startup-id pactl set-sink-
 bindsym       XF86AudioMute                 exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Media player controls
-bindsym       XF86AudioPlay                 exec --no-startup-id mpc toggle
-bindsym       $mod1+XF86AudioPlay           exec --no-startup-id mpc stop
+bindsym       XF86AudioPlay                 exec --no-startup-id mpc toggle; exec killall -USR1 i3status
+bindsym       $mod1+XF86AudioPlay           exec --no-startup-id mpc stop; exec killall -USR1 i3status
 
-bindsym       XF86AudioNext                 exec --no-startup-id mpc next
-bindsym       $mod1+XF86AudioNext           exec --no-startup-id mpc seek +30
+bindsym       XF86AudioNext                 exec --no-startup-id mpc next; exec killall -USR1 i3status
+bindsym       $mod1+XF86AudioNext           exec --no-startup-id mpc seek +30; exec killall -USR1 i3status
 
-bindsym       XF86AudioPrev                 exec --no-startup-id mpc prev
-bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30
+bindsym       XF86AudioPrev                 exec --no-startup-id mpc prev; exec killall -USR1 i3status
+bindsym       $mod1+XF86AudioPrev           exec --no-startup-id mpc seek -30; exec killall -USR1 i3status
 
 # Brightness
 bindsym       XF86MonBrightnessUp           exec --no-startup-id ~/.local/src/acpilight/xbacklight -inc 5
