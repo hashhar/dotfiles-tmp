@@ -52,5 +52,7 @@ fi
 # }}}
 
 notify-send -t 2000 "MPD" "$notify_fmt" -i "$artwork_file"
+# Refresh i3status
+killall -USR1 i3status
 
 # vim: set fdm=marker fen
