@@ -346,7 +346,7 @@ exec          ~/bin/cleanup_bash_hist.sh
 
 # Personalization {{{
 exec          bash -c "cd ~/.config/conky && conky"
-exec          ~/.fehbg
+exec          ~/bin/random_wall.sh
 # }}}
 # }}}
 
