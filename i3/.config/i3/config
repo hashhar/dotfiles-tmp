@@ -262,6 +262,8 @@ mode "mpd" {
 
               # Add to favourites playlist
               bindsym                       Shift+f exec ~/bin/add_to_favourites.sh
+              # Remove from favourites playlist
+              bindsym                       Shift+u exec ~/bin/remove_from_favourites.sh
 
               # Return to normal mode: Enter or Escape
               bindsym                       Return mode "default"
