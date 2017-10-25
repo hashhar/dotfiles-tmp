@@ -16,7 +16,7 @@ do
 
     case "$mpd_status" in
         "playing" )
-            color="#00AAAA" ;;
+            color="#00FFFF" ;;
         "paused" )
             color="#AAAA00" ;;
         * )
