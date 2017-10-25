@@ -26,7 +26,7 @@ touch /tmp/random_wall.lock
 
 while true; do
     setbg
-    sleep 3600
+    sleep 600
     rm /tmp/random_wall.lock
     touch /tmp/random_wall.lock
 done
