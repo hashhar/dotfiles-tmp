@@ -21,5 +21,12 @@ if ! shopt -oq posix; then
 fi
 # }}}
 
+# NVM {{{
+nvm_init() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+# }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

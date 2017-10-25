@@ -51,7 +51,7 @@ findinpath() {
 }
 
 #copy and go to dir
-function cpg() {
+cpg() {
     if [ -d "$2" ];then
         cp "$1" "$2" && cd "$2"
     else
@@ -60,7 +60,7 @@ function cpg() {
 }
 
 #move and go to dir
-function mvg() {
+mvg() {
     if [ -d "$2" ];then
         mv "$1" "$2" && cd "$2"
     else
@@ -69,7 +69,7 @@ function mvg() {
 }
 
 # mkdir and go to dir
-function mkdirg() {
+mkdirg() {
     mkdir -p "$1"
     cd "$1"
 }
@@ -78,12 +78,12 @@ function mkdirg() {
 # Suspends all Firefox Threads. Results in Zero CPU load.
 # Useful when having 100+ Tabs open and you temporarily need the power elsewhere.
 # Be careful - might produce RACE CONDITIONS or LOCKUPS in other processes or FF itself.
-function ffs() {
-    killall -STOP -m nightly
+ffs() {
+    killall -SIGSTOP firefox
 }
 
-function ffc() {
-    killall -CONT -m nightly
+ffc() {
+    killall -SIGCONT firefox
 }
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
