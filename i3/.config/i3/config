@@ -257,8 +257,8 @@ mode "mpd" {
               bindsym                       Shift+r consume
 
               # Seek and time manipulation controls
-              bindsym                       f exec mpc seek +10
-              bindsym                       b exec mpc seek -10
+              bindsym                       f exec mpc seek +30
+              bindsym                       b exec mpc seek -30
 
               # Add to favourites playlist
               bindsym                       Shift+f exec ~/bin/add_to_favourites.sh
@@ -308,8 +308,10 @@ bindsym       $mod1+l                       exec ~/.config/i3/scripts/lock.sh
 
 # Function Keys {{{
 # Pulse Audio controls
-bindsym       XF86AudioRaiseVolume          exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym       XF86AudioLowerVolume          exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym       XF86AudioRaiseVolume          exec --no-startup-id pactl set-sink-volume 0 +1%
+bindsym       $mod1+XF86AudioRaiseVolume    exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym       XF86AudioLowerVolume          exec --no-startup-id pactl set-sink-volume 0 -1%
+bindsym       $mod1+XF86AudioLowerVolume    exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym       XF86AudioMute                 exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Media player controls
