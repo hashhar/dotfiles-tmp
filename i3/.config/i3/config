@@ -251,10 +251,10 @@ mode "mpd" {
               bindsym                       Left         exec mpc volume -2
 
               # Playback control
-              bindsym                       z       random
-              bindsym                       r       repeat
-              bindsym                       y       single
-              bindsym                       Shift+r consume
+              bindsym                       z       exec mpc random
+              bindsym                       r       exec mpc repeat
+              bindsym                       y       exec mpc single
+              bindsym                       Shift+r exec mpc consume
 
               # Seek and time manipulation controls
               bindsym                       f exec mpc seek +30
