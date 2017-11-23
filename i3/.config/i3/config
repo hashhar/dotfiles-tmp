@@ -235,6 +235,7 @@ bindsym       $mod+r                        mode "resize"
 # }}}
 
 # MPD Mode {{{
+bindsym       $mod1+m                       exec rofi-mpc
 bindsym       $mod+m                        mode "mpd"
 
 mode "mpd" {
