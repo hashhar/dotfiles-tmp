@@ -15,7 +15,7 @@ if not current:
 else:
 	current = "Currently Playing: "+current.rstrip()
 commands = b"List\nPlay/Pause\nNext\nPrev\nVolume 25%\nVolume 35%\nVolume 50%\nVolume 75%\nVolume 100%"
-rofi = Popen(["rofi", "-selected-row", "1", "-mesg", current, "-i", "-dmenu", "-p", "MPC: "], stdout=PIPE, stdin=PIPE)
+rofi = Popen(["rofi", "-selected-row", "0", "-mesg", current, "-i", "-dmenu", "-p", "MPC: "], stdout=PIPE, stdin=PIPE)
 tmp = rofi.communicate(input=commands)[0].decode().rstrip()
 if tmp == "Play/Pause":
 	check_call(["mpc", "toggle"])
@@ -59,7 +59,7 @@ if tmp == "List":
 		tmp = rofi.communicate(input=commands.encode())[0].decode().rstrip()
 		if not tmp:
 			sys.exit(0)
-		#elif tmp == "*Add Stream URL*":	
+		#elif tmp == "*Add Stream URL*":
 		elif tmp == "Local ~/Music":
 			check_call(["mpc", "clear"])
 			ls = check_output(["ls", str(Path.home()) + "/Music"])
