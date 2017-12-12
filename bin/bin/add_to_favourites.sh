@@ -3,7 +3,7 @@
 file="$(mpc current -f %file%)"
 current="$(mpc current -f "[[%albumartist%|%artist% - ]%title%]|[%file%]")"
 
-playlist="$HOME/.config/mpd/playlists/Favourites.m3u"
+playlist="$HOME/Music/Playlists/Favourites.m3u"
 if [ "$file" != "" ]; then
 	echo "$file" >> "$playlist"
 	sort -u "$playlist" -o "$playlist"
