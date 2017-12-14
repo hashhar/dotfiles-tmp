@@ -24,15 +24,18 @@ bash_prompt_command()
         trailing="${UC}\\$"
     fi
     if [[ "$force_color_prompt" = yes ]]; then
-        PS1="${C}\w ${trailing} ${NONE}"
+        #PS1="${C}\w ${trailing} ${NONE}"
+        omg_ungit_prompt="${C}\w ${trailing} ${NONE}"
     else
-        PS1="\w \\$ "
+        #PS1="\w \\$ "
+        omg_ungit_prompt="\w \\$"
     fi
     #PS1+="\[\033]0;\]$USER@$HOSTNAME: \w\[\007\]"
 }
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
 export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"
+. /home/ashhar/.local/src/oh-my-git/prompt.sh
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
