@@ -107,6 +107,10 @@ bindsym       $mod+z                        focus child
 # }}}
 
 # Workspaces {{{
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym       $mod+x                        move workspace to output right
+
 # Automatic back and forth workspace switching (Hitting same key workspace combo twice takes back to the workspace where
 # you were earlier
 workspace_auto_back_and_forth               yes
@@ -306,6 +310,8 @@ bar {
 # start a terminal
 bindsym       $mod+Return                   exec i3-sensible-terminal
 bindsym       $mod1+l                       exec ~/.config/i3/scripts/lock.sh
+# Move mouse to center of focused window
+bindsym       $mod1+x                       exec ~/bin/move-mouse-to-center.sh
 
 # Function Keys {{{
 # Pulse Audio controls
