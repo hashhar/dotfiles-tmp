@@ -124,6 +124,7 @@ bindsym       $mod+comma                    workspace prev
 
 # Create new workspace at the end
 bindsym       $mod+n                        exec --no-startup-id ~/.config/i3/scripts/new_workspace.sh
+bindsym       $mod+Shift+n                  exec --no-startup-id ~/.config/i3/scripts/move_to_new_workspace.sh
 
 # Workspace Names {{{
 set           $ws1                          "1:"
