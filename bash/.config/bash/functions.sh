@@ -31,7 +31,9 @@ todo() {
         "-r") nl -b a "$file"
               eval printf %.0s- '{1..'"${COLUMNS:-$(tput cols)}"\}; echo
               read -p "Type a number to remove: " number
-              sed -i "$number"d "$file" "$file";;
+              if [ "x$number" != "x" ]; then
+                  sed -i "$number"d "$file" "$file"
+              fi;;
           "") cat "$file";;
            *) printf "%s\n" "$*" >> "$file";;
     esac
