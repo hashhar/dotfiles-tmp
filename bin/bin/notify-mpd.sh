@@ -5,9 +5,9 @@ current_file="$(mpc current -f "%file%")"
 current_file_name="$(basename "$current_file")"
 
 # Pango templates and notification string {{{
-title_png='<b>Title:</b>\t'
-album_png='<b>Album:</b>\t'
-artist_png='<b>Artist:</b>\t'
+title_png='Title:\t'
+album_png='Album:\t'
+artist_png='Artist:\t'
 
 # Extract metadata {{{
 #title="$title_png$(mpc current -f "[[%track% - ]%title%]|$current_file_name")"
@@ -16,13 +16,6 @@ album="$album_png$(mpc current -f "%album%[ \[%date%\]]|Non-Album")"
 artist="$(mpc current -f "[$artist_png[%albumartist%]%artist%]")"
 # }}}
 
-# Create the notification string {{{
-read -r -d '' notify_fmt <<EOF
-${title//&/&amp;}
-${album//&/&amp;}
-${artist//&/&amp;}
-EOF
-# }}}
 # }}}
 
 # Extract paths and define artwork size {{{
@@ -51,8 +44,11 @@ if [[ ! -e "$artwork_file" ]]; then
 fi
 # }}}
 
-notify-send -t 3000 "MPD" "$notify_fmt" -i "$artwork_file"
-# Refresh i3status
-killall -USR1 i3status
+function _sys_notify() {
+    local notification_command="display notification \"$3\" with title \"$1\" subtitle \"$2\""
+    osascript -e "$notification_command"
+}
+
+_sys_notify "$title" "$artist" "$album"
 
 # vim: set fdm=marker fen

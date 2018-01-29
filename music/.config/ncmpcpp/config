@@ -53,7 +53,7 @@ mpd_music_dir = ~/Music
 ## }
 ##
 #
-visualizer_fifo_path = /tmp/mpd.fifo
+#visualizer_fifo_path = /tmp/mpd.fifo
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp
@@ -63,12 +63,12 @@ visualizer_fifo_path = /tmp/mpd.fifo
 ## are some problems with it.
 ##
 #
-visualizer_output_name = NCMPCPP Visualizer
+#visualizer_output_name = NCMPCPP Visualizer
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-visualizer_in_stereo = yes
+#visualizer_in_stereo = yes
 #
 ##
 ## Multiply received samples by given value. Very
@@ -93,11 +93,11 @@ visualizer_in_stereo = yes
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-visualizer_type = spectrum
+#visualizer_type = spectrum
 #
-visualizer_look = ●▮
+#visualizer_look = ●▮
 #
-visualizer_color = blue, cyan, green, yellow, magenta, red
+#visualizer_color = blue, cyan, green, yellow, magenta, red
 #
 ## Alternative subset of 256 colors for terminals that support it.
 ##
@@ -284,7 +284,7 @@ message_delay_time = 2
 ## Note: Custom command that will be executed each
 ## time song changes. Useful for notifications etc.
 ##
-execute_on_song_change = "/home/ashhar/bin/notify-mpd.sh"
+execute_on_song_change = "/Users/asshar/bin/notify-mpd.sh"
 #
 #playlist_show_mpd_host = no
 #
