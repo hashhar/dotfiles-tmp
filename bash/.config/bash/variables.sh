@@ -1,5 +1,10 @@
+#!/bin/bash
+
 # Path {{{
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # }}}
 
 # Default programs {{{
@@ -15,11 +20,6 @@ fi
 # }}}
 # }}}
 
-# Frequently used directory variables {{{
-export gitatt="$HOME/src/_touse/gitattributes"
-export gitig="$HOME/src/_touse/gitignore"
-# }}}
-
 # WeeChat {{{
 export WEECHAT_HOME="$HOME/.config/weechat"
 # }}}
@@ -33,19 +33,14 @@ export LESSHISTFILE="${XDG_DATA_HOME:="$HOME/.local/share"}/less/history"
 export GPG_TTY="$(tty)"
 # }}}
 
-# VDPAU Hardware Video Acceleration {{{
-export VDPAU_DRIVER='va_gl'
-# }}}
-
 # Hstr config {{{
 export HH_CONFIG='hicolor'
 # }}}
 
 # Golang {{{
-export GOROOT="/usr/local/go"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/code"
 export GOBIN="$GOPATH/bin"
-export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export PATH="$PATH:$GOPATH/bin"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

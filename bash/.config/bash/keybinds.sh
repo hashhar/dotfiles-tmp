@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Completion {{{
 bind 'TAB: menu-complete'
 bind '\C-space: complete'

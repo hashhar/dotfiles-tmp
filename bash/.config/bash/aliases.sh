@@ -1,12 +1,10 @@
+#!/bin/bash
+
 # ls {{{
 alias sl='\ls --group-directories-first --color=auto -h'
 alias ls='\ls --group-directories-first --color=auto -h -A'
 alias ll='\ls --group-directories-first --color=auto -hF -lA'
 alias tree='tree -C'
-# }}}
-
-# GPG and Keybase and SSH {{{
-alias gpg='gpg2'
 # }}}
 
 # Disk Usage {{{
@@ -38,7 +36,6 @@ alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
 alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | \
     shuf -n 5 | cut -d. -f1) | head -n 5'
-alias pcc='xclip -selection clipboard'
 # }}}
 
 alias bc='bc -q'
@@ -67,12 +64,11 @@ alias vi='nvim'
 # }}}
 
 # Miscellaneous {{{
-alias cowfor='fortune -eac | tee >(head -n 1 >> \
-    "$HOME/.fortune-category-log") | tail -n +3 | cowsay -f "$(find \
-    /usr/share/cowsay/cows/ -type f | sort -R | head -1)" \
+alias cowfor='fortune -ea | cowsay -f "$(find \
+    /usr/local/share/cows/ -type f | sort -R | head -1)" \
     -W $(($(tput cols) - 10)) | lolcat'
 alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
-alias mpv='mpv --vo=opengl --hwdec=vaapi'
+alias mpv='mpv --hwdec=auto'
 # }}}
 
 # FASD {{{

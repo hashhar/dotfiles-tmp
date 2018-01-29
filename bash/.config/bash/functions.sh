@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Run a command in background and detach from current shell
 bg_run() {
     nohup "$@" > /dev/null 2>&1 &

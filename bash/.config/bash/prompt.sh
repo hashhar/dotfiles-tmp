@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Prompt {{{
 PS1='[\u@\h \W]\$ '
 export PROMPT_DIRTRIM=0
@@ -35,7 +37,7 @@ bash_prompt_command()
 bash_prompt_command
 export PROMPT_COMMAND=bash_prompt_command
 export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"
-. /home/ashhar/.local/src/oh-my-git/prompt.sh
+. $HOME/.local/src/oh-my-git/prompt.sh
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Bash options {{{
 #shopt -s cdable_vars
 shopt -s cdspell
