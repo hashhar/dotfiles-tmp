@@ -62,6 +62,6 @@
 	pf = push -f
 
 [gpg]
-	program = gpg2
+	program = gpg
 
 # vim: set list,fdm=marker,tw=120
