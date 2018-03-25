@@ -67,7 +67,7 @@ alias vi='nvim'
 alias cowfor='fortune -ea | cowsay -f "$(find \
     /usr/local/share/cows/ -type f | sort -R | head -1)" \
     -W $(($(tput cols) - 10)) | lolcat'
-alias rainbowroad='seq 1 $(tput cols) | sort -R | sparklines | lolcat'
+alias rainbowroad='seq 1 $(tput cols) | sort -R | spark | lolcat'
 alias mpv='mpv --hwdec=auto'
 # }}}
 
