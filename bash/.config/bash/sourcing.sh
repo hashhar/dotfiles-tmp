@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# command not found hook {{{
-if brew command command-not-found-init > /dev/null 2>&1; then
-    eval "$(brew command-not-found-init)"
-fi
-# }}}
-
 # FASD {{{
 fasd_cache="${XDG_CACHE_HOME:=$HOME/.cache}/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
