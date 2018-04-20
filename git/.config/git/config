@@ -1,6 +1,7 @@
 [user]
 	name = Ashhar Hasan
-	email = ashhar.hasan@jabong.com
+	# Require setting user.name and email per-repo
+	useConfigOnly = true
 	signingkey = 4CD0188E0E5784EF
 [core]
 	safecrlf = warn
