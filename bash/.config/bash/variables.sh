@@ -6,6 +6,11 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# Ruby {{{
+export GEM_HOME="$(ruby -e 'print Gem.user_dir')"
+export PATH="$GEM_HOME/bin:$PATH"
+# }}}
+
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 # }}}
 

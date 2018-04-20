@@ -339,8 +339,8 @@ function! Cond(cond, ...)
 endfunction
 
 if has('nvim')
-  let g:python_host_prog = '/usr/bin/python2'
-  let g:python3_host_prog = '/usr/bin/python3'
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
 " Auto-install vim-plug
@@ -361,7 +361,7 @@ Plug 'honza/vim-snippets'
 " PHP
 """""""""""""""""""""""""""""""""""""""
 Plug 'stanangeloff/php.vim'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'sudo apt install composer && composer install' }
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'brew install composer && composer install' }
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 
