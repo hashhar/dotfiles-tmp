@@ -2,10 +2,10 @@
 
 # FASD {{{
 fasd_cache="${XDG_CACHE_HOME:=$HOME/.cache}/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+if [ "$(command -v fasd)" -nt "$fasd_cache" ] || [ ! -s "$fasd_cache" ]; then
   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
 fi
-source "$fasd_cache"
+. "$fasd_cache"
 unset fasd_cache
 # }}}
 

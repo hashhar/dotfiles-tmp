@@ -32,14 +32,9 @@ alias rm='rm -i'
 # Information Querying and Storing {{{
 alias path='echo $PATH | tr -s ":" "\n"'
 alias histg='history | grep'
-alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | \
-    shuf -n 5 | cut -d. -f1) | head -n 5'
-alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | \
-    shuf -n 5 | cut -d. -f1) | head -n 5'
+alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | shuf -n 5 | cut -d. -f1) | head -n 5'
+alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | shuf -n 5 | cut -d. -f1) | head -n 5'
 # }}}
-
-alias bc='bc -q'
-alias lock='"$HOME/.config/i3/scripts/lock.sh"'
 
 # Privileged Access {{{
 if [ $UID -ne 0 ]; then
@@ -64,11 +59,13 @@ alias vi='nvim'
 # }}}
 
 # Miscellaneous {{{
-alias cowfor='fortune -ea | cowsay -f "$(find \
-    /usr/local/share/cows/ -type f | sort -R | head -1)" \
-    -W $(($(tput cols) - 10)) | lolcat'
+alias cowfor='fortune -ea | cowsay -f "$(find /usr/local/share/cows/ -type f | sort -R | head -1)" -W $(($(tput cols) - 10)) | lolcat'
 alias rainbowroad='seq 1 $(tput cols) | sort -R | spark | lolcat'
 alias mpv='mpv --hwdec=auto'
+alias bc='bc -q'
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 # }}}
 
 # FASD {{{

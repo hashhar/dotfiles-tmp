@@ -78,16 +78,4 @@ mkdirg() {
     cd "$1"
 }
 
-# Manually Pause/Unpause Firefox Process with POSIX-Signals
-# Suspends all Firefox Threads. Results in Zero CPU load.
-# Useful when having 100+ Tabs open and you temporarily need the power elsewhere.
-# Be careful - might produce RACE CONDITIONS or LOCKUPS in other processes or FF itself.
-ffs() {
-    killall -SIGSTOP firefox
-}
-
-ffc() {
-    killall -SIGCONT firefox
-}
-
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4

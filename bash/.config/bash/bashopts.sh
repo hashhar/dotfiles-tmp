@@ -1,11 +1,15 @@
 #!/bin/bash
 
 # Bash options {{{
-#shopt -s cdable_vars
-shopt -s cdspell
 shopt -s checkhash
 shopt -s checkjobs
+
+#shopt -s cdable_vars
+shopt -s cdspell
+shopt -s autocd
 shopt -s globstar
+shopt -s nocaseglob
+
 shopt -s histappend
 # }}}
 
