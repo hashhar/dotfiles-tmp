@@ -27,17 +27,18 @@ default_prompt_setup()
     fi
     if [[ "$force_color_prompt" = yes ]]; then
         PS1="${C}\w ${trailing} ${NONE}"
-        PROMPT_COMMAND="__posh_git_ps1 \"${C}\w \" \"${trailing}${NONE} \""
+        export prefix="${C}\w"
+        export suffix="${trailing} ${NONE}"
     else
         PS1="\w \\$ "
-        PROMPT_COMMAND="__posh_git_ps1 \"\w \" \"\\$ \""
+        export prefix="\w"
+        export suffix="\\$ "
     fi
     #PS1+="\[\033]0;\]\\u@\\h: \w\[\007\]"
 }
 
 . $HOME/.local/src/oh-my-git/posh-git.sh
-default_prompt_setup
-export PROMPT_COMMAND="${PROMPT_COMMAND}; history -a; history -n"
+export PROMPT_COMMAND='default_prompt_setup; __posh_git_ps1 "$prefix " "$suffix"; history -a; history -n'
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
