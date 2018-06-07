@@ -9,12 +9,14 @@ alias tree='tree -C'
 
 # Disk Usage {{{
 alias df='df -h'
-alias du='du -h -c'
-alias du1='du -h -c --max-depth=1'
+alias du='\du -h -c'
+alias du1='\du -h -c --max-depth=1'
 # }}}
 
 # Searching and Pagers {{{
 alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 # }}}
 
 # Networking {{{

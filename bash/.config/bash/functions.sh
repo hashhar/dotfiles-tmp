@@ -7,7 +7,7 @@ bg_run() {
 
 # Personal notes app
 note() {
-    local file="$HOME/note"
+    local file="$HOME/note.md"
     if [[ ! -f "$file" ]]; then
         touch "$file"
     fi
@@ -22,7 +22,7 @@ note() {
 
 # Personal todo app
 todo() {
-    local file="$HOME/todo"
+    local file="$HOME/todo.md"
     if [[ ! -f "$file" ]]; then
         touch "$file"
     fi
