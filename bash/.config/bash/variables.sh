@@ -33,7 +33,8 @@ export WEECHAT_HOME="$HOME/.config/weechat"
 
 # Less {{{
 export LESSHISTFILE="${XDG_DATA_HOME:="$HOME/.local/share"}/less/history"
-[ -d "$(dirname "$LESSHISTFILE")" ] || mkdir -p "$(dirname "$LESSHISTFILE")"
+_lessdir="$(dirname "$LESSHISTFILE")"
+[ -d "$_lessdir" ] || mkdir -p "$_lessdir"
 # }}}
 
 # GPG {{{

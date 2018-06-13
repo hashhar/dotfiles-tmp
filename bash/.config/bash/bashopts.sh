@@ -1,16 +1,23 @@
 #!/bin/bash
 
 # Bash options {{{
+shopt -s cdspell autocd
 shopt -s checkhash
+
+# Check if any jobs are jobs are running before exiting
 shopt -s checkjobs
 
-#shopt -s cdable_vars
-shopt -s cdspell
-shopt -s autocd
-shopt -s globstar
-shopt -s nocaseglob
+# Save multiline commands in single history entry
+shopt -s cmdhist lithist
 
+# Globbing
+shopt -s dotglob extglob globstar nocaseglob
+
+# Append to history file instead of overwriting it
 shopt -s histappend
+
+# Load the history substitution into the editing buffer, rather than directly executing it
+shopt -s histverify
 # }}}
 
 # History {{{

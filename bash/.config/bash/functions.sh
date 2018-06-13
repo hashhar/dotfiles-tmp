@@ -29,15 +29,15 @@ todo() {
 
     case $@ in
         "-l") nl -b a "$file";;
-        "-c") >"$file";;
+        "-c") true > "$file";;
         "-r") nl -b a "$file"
               eval printf %.0s- '{1..'"${COLUMNS:-$(tput cols)}"\}; echo
-              read -p "Type a number to remove: " number
+              read -r -p "Type a number to remove: " number
               if [ "x$number" != "x" ]; then
                   sed -i "$number"d "$file" "$file"
               fi;;
           "") cat "$file";;
-           *) printf "%s\n" "$*" >> "$file";;
+           *) printf "%s\\n" "$*" >> "$file";;
     esac
 }
 
@@ -49,7 +49,7 @@ calc() {
 # Find a program in $PATH
 findinpath() {
     [ -n "$1" ] || return 1
-    for path in $(echo "$PATH" | tr -s ":" "\n"); do
+    for path in $(echo "$PATH" | tr -s ":" "\\n"); do
         find "$path" -iname "*$1*" -type f
     done
 }

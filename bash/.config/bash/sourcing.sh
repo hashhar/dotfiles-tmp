@@ -2,7 +2,7 @@
 
 # FASD {{{
 fasd_cache="${XDG_CACHE_HOME:=$HOME/.cache}/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" ] || [ ! -s "$fasd_cache" ]; then
+if [ ! -s "$fasd_cache" ]; then
   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
 fi
 . "$fasd_cache"
@@ -32,7 +32,7 @@ fi
 # NVM {{{
 nvm_init() {
     export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+    [ -s "$BREW_PREFIX/opt/nvm/nvm.sh" ] && . "$BREW_PREFIX/opt/nvm/nvm.sh"
 }
 # }}}
 

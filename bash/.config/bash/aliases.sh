@@ -1,9 +1,14 @@
 #!/bin/bash
 
 # ls {{{
-alias sl='\ls --group-directories-first --color=auto -h'
-alias ls='\ls --group-directories-first --color=auto -h -A'
-alias ll='\ls --group-directories-first --color=auto -hF -lA'
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X `ls`
+    colorflag="-G"
+fi
+alias sl='\ls --group-directories-first ${colorflag} -h'
+alias ls='\ls --group-directories-first ${colorflag} -h -A'
+alias ll='\ls --group-directories-first ${colorflag} -hF -lA'
 alias tree='tree -C'
 # }}}
 
