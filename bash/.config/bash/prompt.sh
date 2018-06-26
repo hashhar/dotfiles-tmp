@@ -4,6 +4,9 @@
 PS1='[\u@\h \W]\$ '
 export PROMPT_DIRTRIM=0
 
+# Remove Apple Terminal injected code
+PROMPT_COMMAND="${PROMPT_COMMAND%update_terminal_cwd}"
+
 default_prompt_setup()
 {
     local exit_code=$?
@@ -35,7 +38,7 @@ default_prompt_setup()
 }
 
 . "$HOME"/.local/src/oh-my-git/posh-git.sh
-export PROMPT_COMMAND='default_prompt_setup; __posh_git_ps1 "$prefix " "$suffix"; history -a; history -n'
+export PROMPT_COMMAND='default_prompt_setup; __posh_git_ps1 "$prefix " "$suffix"; history -a; history -n; '"${PROMPT_COMMAND}"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
