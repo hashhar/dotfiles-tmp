@@ -41,6 +41,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias histg='history | grep'
 alias ranman='whatis $(find /usr/share/man/man{1,4,5,6,7,8}/ -printf "%f\n" | shuf -n 5 | cut -d. -f1) | head -n 5'
 alias anyman='whatis $(find /usr/share/man/man[1-8]/ -printf "%f\n" | shuf -n 5 | cut -d. -f1) | head -n 5'
+alias pgrep='pgrep -fil'
 # }}}
 
 # Privileged Access {{{
