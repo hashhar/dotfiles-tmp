@@ -67,16 +67,16 @@
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
 
 	# Remove branches that have already been merged with master
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	dm = "!git branch --merged | grep -v '\\*' | grep -v master | xargs -n 1 git branch -d"
 
 	co = checkout
 	ec = config --global -e
 
 	# Pull changes from the remote, rebase any local commits and remove remote-tracking branches that no longer exist on the remote
-	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	up = "!git pull --rebase --prune $@ && git submodule update --init --recursive"
 
 	cob = checkout -b
-	save = !git add -A && git commit -m 'SAVEPOINT'
+	save = "!git add -A && git commit -m 'SAVEPOINT'"
 	wip = commit -am "WIP"
 	undo = reset HEAD~1 --mixed
 
