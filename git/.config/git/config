@@ -19,9 +19,11 @@
 [diff]
 	renames = copies
 	submodule = log
-	tool = vimdiff3
+	tool = vscode
 	algorithm = histogram
 	wsErorrHighlight = old,new,context
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [fetch]
 	recurseSubmodules = on-demand
 	prune = true
@@ -39,8 +41,10 @@
 [merge]
 	branchdesc = true
 	log = 20
-	tool = vimdiff3
+	tool = vscode
 	keeptemporaries = true
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
 [pack]
 	threads = 0
 [push]
