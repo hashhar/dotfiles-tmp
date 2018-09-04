@@ -19,7 +19,7 @@
 [diff]
 	renames = copies
 	submodule = log
-	tool = vscode
+	tool = vimdiff3
 	algorithm = histogram
 	wsErorrHighlight = old,new,context
 [difftool "vscode"]
@@ -41,7 +41,7 @@
 [merge]
 	branchdesc = true
 	log = 20
-	tool = vscode
+	tool = vimdiff3
 	keeptemporaries = true
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
