@@ -358,13 +358,6 @@ Plug 'raimondi/delimitMate'                      " Insert mode autocompletion fo
 Plug 'SirVer/ultisnips'                          " Snippets for vim
 Plug 'honza/vim-snippets'
 
-" PHP
-"""""""""""""""""""""""""""""""""""""""
-Plug 'stanangeloff/php.vim'
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'brew install composer && composer install' }
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
-
 " Golang
 """"""""""""""""""""""""""""""""""""""""
 Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
