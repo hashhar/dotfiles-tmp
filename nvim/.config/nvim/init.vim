@@ -2,12 +2,13 @@
 " => VIM SPECIFIC OPTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+filetype plugin indent on
+syntax enable
+syntax on
 set history=10000
 set autoread
-filetype plugin indent on
 set autoindent
 set smarttab
-syntax enable
 set backspace=indent,eol,start
 " Make <C-A> and <C-X> only consider single alphabets, decimal and hexadecimal numbers
 set nrformats-=octal
@@ -118,7 +119,7 @@ set pastetoggle=<F2>
 set noexpandtab " Insert tabs
 set tabstop=4
 set shiftwidth=4
-autocmd BufWinEnter * if &l:buftype !=# 'help' | :YAIFAMagic | endif
+autocmd BufWinEnter * :Yaifa
 
 " Only add 1 space after punctuation when joining lines
 set nojoinspaces

@@ -2,12 +2,13 @@
 " => VIM SPECIFIC OPTIONS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+filetype plugin indent on
+syntax enable
+syntax on
 set history=10000
 set autoread
-filetype plugin indent on
 set autoindent
 set smarttab
-syntax enable
 set backspace=indent,eol,start
 " Make <C-A> and <C-X> only consider single alphabets, decimal and hexadecimal numbers
 set nrformats-=octal
@@ -115,7 +116,7 @@ set pastetoggle=<F2>
 set noexpandtab " Insert tabs
 set tabstop=4
 set shiftwidth=4
-autocmd BufWinEnter * if &l:buftype !=# 'help' | :YAIFAMagic | endif
+autocmd BufWinEnter * :Yaifa
 
 " Only add 1 space after punctuation when joining lines
 set nojoinspaces
@@ -291,8 +292,8 @@ function! Cond(cond, ...)
 endfunction
 
 if has('nvim')
-  let g:python_host_prog = '/usr/bin/python2'
-  let g:python3_host_prog = '/usr/bin/python3'
+  let g:python_host_prog = '/usr/local/bin/python2'
+  let g:python3_host_prog = '/usr/local/bin/python3'
 endif
 
 " Auto-install vim-plug
@@ -310,13 +311,13 @@ Plug 'raimondi/delimitMate'                      " Insert mode autocompletion fo
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-t>     <Plug>(neosnippet_expand_or_jump)
-smap <C-t>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-t>     <Plug>(neosnippet_expand_target)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-t>     <Plug>(neosnippet_expand_or_jump)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB>
  \ pumvisible() ? "\<C-n>" :
  \ neosnippet#expandable_or_jumpable() ?
