@@ -8,8 +8,6 @@
 	autocrlf = input
 	excludesFile = ~/.config/git/ignore
 	attributesFile = ~/.config/git/attributes
-	# Specify a minimal vimrc for git using -u ~/.vimini
-	editor = nvim -u ~/.config/git/vimrc
 [commit]
 	template = ~/.config/git/commit-template
 	verbose = true
@@ -85,6 +83,4 @@
 	undo = reset HEAD~1 --mixed
 
 [gpg]
-	program = gpg
-
-# vim: set list,fdm=marker,tw=120
+	program = gpg2
