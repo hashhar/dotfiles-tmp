@@ -13,10 +13,10 @@ note() {
     fi
 
     case $@ in
-        "-e") nvim "$file";;
+        "-e") $EDITOR "$file";;
           "") less "$file";;
-           *) printf '%s: %s\n' "$(date +%F\ %T)" "$*" >> "$file"
-              printf '%s added to your notes.\n' "\"$*\"";;
+           *) printf '%s: %s\\n' "$(date +%F\ %T)" "$*" >> "$file"
+              printf '%s added to your notes.\\n' "\"$*\"";;
     esac
 }
 
@@ -33,10 +33,10 @@ todo() {
         "-r") nl -b a "$file"
               eval printf %.0s- '{1..'"${COLUMNS:-$(tput cols)}"\}; echo
               read -r -p "Type a number to remove: " number
-              if [ "x$number" != "x" ]; then
-                  sed -i "$number"d "$file" "$file"
+              if [[ -n "$number" ]]; then
+                  sed -i "$number"d "$file"
               fi;;
-          "") cat "$file";;
+          "") less "$file";;
            *) printf "%s\\n" "$*" >> "$file";;
     esac
 }
@@ -48,24 +48,24 @@ calc() {
 
 # Find a program in $PATH
 findinpath() {
-    [ -n "$1" ] || return 1
+    [[ -n "$1" ]] || return 1
     for path in $(echo "$PATH" | tr -s ":" "\\n"); do
         find "$path" -iname "*$1*" -type f
     done
 }
 
-#copy and go to dir
+# Copy and go to dir
 cpg() {
-    if [ -d "$2" ];then
+    if [[ -d "$2" ]]; then
         cp "$1" "$2" && cd "$2"
     else
         cp "$1" "$2"
     fi
 }
 
-#move and go to dir
+# Move and go to dir
 mvg() {
-    if [ -d "$2" ];then
+    if [[ -d "$2" ]]; then
         mv "$1" "$2" && cd "$2"
     else
         mv "$1" "$2"

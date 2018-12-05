@@ -1,39 +1,34 @@
 #!/bin/bash
 
 # ls {{{
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
-else # OS X `ls`
-    colorflag="-G"
-fi
-alias sl='\ls --group-directories-first ${colorflag} -h'
-alias ls='\ls --group-directories-first ${colorflag} -h -A'
-alias ll='\ls --group-directories-first ${colorflag} -hF -lA'
-alias tree='tree -C'
+alias sl='\ls --group-directories-first --color=auto -h'
+alias ls='\ls --group-directories-first --color=auto -h -A'
+alias ll='\ls --group-directories-first --color=auto -hF -lA'
+alias tree='\tree -C'
 # }}}
 
 # Disk Usage {{{
-alias df='df -h'
+alias df='\df -h'
 alias du='\du -h -c'
 alias du1='\du -h -c --max-depth=1'
 # }}}
 
 # Searching and Pagers {{{
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep='\grep --color=auto'
+alias fgrep='\fgrep --color=auto'
+alias egrep='\egrep --color=auto'
 # }}}
 
 # Networking {{{
-alias openports='ss --all --numeric --processes --ipv4 --ipv6'
-alias ping='ping -c 4'
+alias openports='\ss --all --numeric --processes --ipv4 --ipv6'
+alias ping='\ping -c 4'
 # }}}
 
 # Preventing Data Loss {{{
-alias mkdir='mkdir -p -v'
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+alias mkdir='\mkdir -p -v'
+alias cp='\cp -i'
+alias mv='\mv -i'
+alias rm='\rm -i'
 # }}}
 
 # Information Querying and Storing {{{
@@ -45,9 +40,9 @@ alias pgrep='pgrep -fil'
 # }}}
 
 # Privileged Access {{{
-if [ $UID -ne 0 ]; then
+if (( UID != 0 )); then
     alias scat='sudo cat'
-    alias svim='sudo nvim'
+    alias svim='sudo vim'
     alias root='sudo su'
     alias fuck='sudo !!'
 fi
@@ -56,14 +51,9 @@ fi
 # Make errors tolerable {{{
 alias :q='exit'
 alias :Q='exit'
-alias :x='exit'
 alias quit='exit'
 alias cd..='cd ..'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias vi='nvim'
 # }}}
 
 # Miscellaneous {{{
@@ -71,18 +61,16 @@ alias cowfor='fortune -ea | cowsay -f "$(find /usr/local/share/cows/ -type f | s
 alias rainbowroad='seq 1 $(tput cols) | sort -R | spark | lolcat'
 alias mpv='mpv --hwdec=auto'
 alias bc='bc -q'
+alias pcc='xclip -selection clipboard'
 
 # Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias afk='"$HOME/.config/i3/scripts/lock.sh"'
 # }}}
 
-# FASD {{{
-alias nv='a -e nvim'
-# }}}
-
-# SSH and SCP {{{
+# SSH, SCP and GPG {{{
 alias sshp='ssh -o "PubkeyAuthentication no"'
 alias scpp='scp -o "PubkeyAuthentication no"'
+alias gpg='gpg2'
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
