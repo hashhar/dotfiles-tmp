@@ -38,10 +38,10 @@ EOF
 # Colours {{{
 initializeColours() {
     # Check if stdout is a terminal.
-    if [ -t 1 ]; then
+    if [[ -t 1 ]]; then
         # See if it supports colors.
         ncolors="$(tput colors)"
-        if [ -n "$ncolors" ] && (( ncolors > 8 )); then
+        if [[ -n "$ncolors" ]] && (( ncolors > 8 )); then
             cb="$(tput bold)"
             cu="$(tput smul)"
             cc="$(tput sgr0)"

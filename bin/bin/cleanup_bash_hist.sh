@@ -1,7 +1,6 @@
 #!/bin/bash
 
-filter()
-{
+filter() {
 	patterns=("cd*" \
 		"git status" \
 		"git push*" \
@@ -43,8 +42,7 @@ filter()
 	mv /tmp/hist ~/.bash_history
 }
 
-dedup()
-{
+dedup() {
 	temp="/tmp/.hist"
 	nl ~/.bash_history | sort -k2 -k 1,1nr | uniq -f1 | sort -n | \
 		cut -f2 > "$temp"
@@ -52,4 +50,3 @@ dedup()
 }
 
 dedup
-

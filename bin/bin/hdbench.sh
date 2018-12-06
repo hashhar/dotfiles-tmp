@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Normal write speed
 printf 'Performing Normal write test\n'

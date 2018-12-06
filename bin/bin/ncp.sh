@@ -3,12 +3,13 @@
 FILE_FULL=$1
 REMOTE_HOST=$2
 
-FILE_DIR=$(dirname $FILE_FULL)
-FILE_NAME=$(basename $FILE_FULL)
-LOCALHOST=$(hostname)
+FILE_DIR="$(dirname "$FILE_FULL")"
+FILE_NAME="$(basename "$FILE_FULL")"
+LOCALHOST="$(hostname)"
 
 ZIP_TOOL=pigz
 NC_PORT=8888
 
-tar -cf - -C $FILE_DIR $FILE_NAME | pv -s `du -sb $FILE_FULL | awk '{s += $1} END {printf "%d", s}'` | $ZIP_TOOL | nc -l $NC_PORT &
-ssh $REMOTE_HOST "nc $LOCALHOST $NC_PORT | $ZIP_TOOL -d | tar xf - -C $FILE_DIR"
+tar -cf - -C "$FILE_DIR" "$FILE_NAME" | pv -s "$(du -sb "$FILE_FULL" | awk '{s += $1} END {printf "%d", s}')" | $ZIP_TOOL | nc -l $NC_PORT &
+# Don't quote the variables in the ssh invocation since we want them to resolved locally instead of on the remote
+ssh "$REMOTE_HOST" "nc $LOCALHOST $NC_PORT | $ZIP_TOOL -d | tar xf - -C $FILE_DIR"

@@ -1,9 +1,10 @@
 #!/bin/bash
 
 DIR="$HOME/Pictures/Wallpapers"
+LOCK_FILE="/tmp/random_wall.lock"
 
-if [ ! -d "$DIR" ]; then
-    echo "Not Exist $DIR"
+if [[ ! -d "$DIR" ]]; then
+    echo "$DIR does not exist"
     exit 1
 fi
 
@@ -17,16 +18,16 @@ setbg () {
     feh --bg-fill "${RAND_FILE}"
 }
 
-if [ -f "/tmp/random_wall.lock" ]; then
+if [[ -f "$LOCK_FILE" ]]; then
     setbg
     exit 1
 fi
 
-touch /tmp/random_wall.lock
+touch "$LOCK_FILE"
 
 while true; do
     setbg
     sleep 600
-    rm /tmp/random_wall.lock
-    touch /tmp/random_wall.lock
+    rm "$LOCK_FILE"
+    touch "$LOCK_FILE"
 done
