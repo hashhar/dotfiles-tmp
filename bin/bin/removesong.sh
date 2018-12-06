@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Description:  Deletes or moves the currently playing file in mpd.
-# Dependencies: mpc, mpd
-
 # Usage {{{
 show_help() {
     cat << EOF
@@ -61,12 +58,12 @@ scriptname='removesong.sh'
 # Set up colours.
 initializeColours
 # Go to root directory to ensure only absolute paths work.
-oldpwd=$(pwd)
+oldpwd="$(pwd)"
 cd /
 
 # Check for dependencies {{{
-[ ! "$(command -v mpc)" ] && printf "${cbr}ERROR${cc}: mpc is needed.\n"
-[ ! "$(command -v mpd)" ] && printf "${cbr}ERROR${cc}: mpd is needed.\n"
+[[ ! "$(command -v mpc)" ]] && printf "%s\\n" "${cbr}ERROR${cc}: mpc is needed."
+[[ ! "$(command -v mpd)" ]] && printf "%s\\n" "${cbr}ERROR${cc}: mpd is needed."
 # }}}
 
 # Default options {{{
@@ -85,12 +82,12 @@ while getopts :hfmdb:l: opt; do
             exit 0
             ;;
         m|d)
-            if (( $action_set == 1 )); then
-                printf "${cbr}ERROR:${cc} ${cb}-m${cc} and ${cb}-d${cc} are mutually exclusive. Use only one.\n" >&2
+            if (( action_set == 1 )); then
+                printf "%s\\n" "${cbr}ERROR:${cc} ${cb}-m${cc} and ${cb}-d${cc} are mutually exclusive. Use only one." >&2
                 exit 1
             fi
             # Set action according to option.
-            if [ "$opt" = "m" ]; then
+            if [[ "$opt" == "m" ]]; then
                 action="move"
             else
                 action="delete"
@@ -99,15 +96,15 @@ while getopts :hfmdb:l: opt; do
             ;;
         b)
             # Exit if the directory does not exist.
-            if [ ! -d "$OPTARG" ]; then
-                printf "${cbr}ERROR:${cc} ${cb}$OPTARG${cc} is not a directory. Cannot proceed.\n" >&2
+            if [[ ! -d "$OPTARG" ]]; then
+                printf "%s\\n" "${cbr}ERROR:${cc} ${cb}$OPTARG${cc} is not a directory. Cannot proceed." >&2
                 exit 3
             fi
             music_dir="$OPTARG"
             ;;
         l)
             # Skip if the action is delete. This can fail if the action arg comes later than this.
-            [ "$action" = "delete" ] && continue
+            [[ "$action" == "delete" ]] && continue
             move_location="$OPTARG"
             ;;
         f)
@@ -115,7 +112,7 @@ while getopts :hfmdb:l: opt; do
             ;;
         :)
             # Argument missing.
-            printf "${cbr}ERROR:${cc} Option ${cb}-$OPTARG${cc} requires an argument.\n"
+            printf "%s\\n" "${cbr}ERROR:${cc} Option ${cb}-$OPTARG${cc} requires an argument."
             exit 1
             ;;
         *)
@@ -126,27 +123,27 @@ while getopts :hfmdb:l: opt; do
 done
 shift "$((OPTIND-1))" # Shift off the options and optional --.
 # Everything that's left in "$@" is a non-option. We consider this an error for this script.
-if [ $# -ne 0 ]; then
-    printf "${cbr}ERROR:${cc} This script does not accept any un-named positional parameters.\n"
+if [[ $# != 0 ]]; then
+    printf "%s\\n" "${cbr}ERROR:${cc} This script does not accept any un-named positional parameters."
     exit 2
 fi
 # }}}
 
 # Validate move_location and music_dir {{{
 # If the location is not a directory (or a symlink that points to a directory), exit.
-if [ ! -d "$music_dir" ]; then
-    printf "${cbr}ERROR:${cc} ${cb}$music_dir${cc} is not a directory or does not point to a directory. Cannot proceed.\n" >&2
+if [[ ! -d "$music_dir" ]]; then
+    printf "%s\\n" "${cbr}ERROR:${cc} ${cb}$music_dir${cc} is not a directory or does not point to a directory. Cannot proceed." >&2
     exit 3
 fi
 
-if [ ! -d "$move_location" ]; then
-    printf "${cbr}ERROR:${cc} ${cb}$move_location${cc} is not a directory or does not point to a directory. Cannot proceed.\n" >&2
+if [[ ! -d "$move_location" ]]; then
+    printf "%s\\n" "${cbr}ERROR:${cc} ${cb}$move_location${cc} is not a directory or does not point to a directory. Cannot proceed." >&2
     exit 3
 fi
 # }}}
 
 # Perform the functions {{{
-if [ "$action" = "move" ]; then
+if [[ "$action" == "move" ]]; then
     mv "$interactive" "$music_dir/$(mpc current -f %file%)" "$move_location/" && \
         cd "$oldpwd" && \
         exit 0
@@ -157,5 +154,3 @@ else
 fi
 exit 1
 # }}}
-
-# vim: tw=80 sts=4 ts=4 sw=4 et fdm=marker

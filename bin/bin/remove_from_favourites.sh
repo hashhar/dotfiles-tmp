@@ -5,8 +5,8 @@ current="$(mpc current -f "[[%albumartist%|%artist% - ]%title%]|[%file%]")"
 
 playlist="$HOME/Music/Playlists/Favourites.m3u"
 deletedplaylist="/tmp/deleted"
-if [ "$file" != "" ]; then
-	echo "$file" > "$deletedplaylist"
+if [[ "$file" != "" ]]; then
+	printf "%s\\n" "$file" > "$deletedplaylist"
 	cp "$playlist" /tmp/cache
 	comm -13 <(sort "$deletedplaylist") <(sort "/tmp/cache") > "$playlist"
 	sort -u "$playlist" -o "$playlist"

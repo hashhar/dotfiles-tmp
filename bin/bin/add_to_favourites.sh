@@ -3,9 +3,12 @@
 file="$(mpc current -f %file%)"
 current="$(mpc current -f "[[%albumartist%|%artist% - ]%title%]|[%file%]")"
 
-playlist="$HOME/Music/Playlists/Favourites.m3u"
-if [ "$file" != "" ]; then
-	echo "$file" >> "$playlist"
+playlist_dir="$HOME/Music/Playlists"
+[[ -e "$playlist_dir" ]] || mkdir -p "$playlist_dir" 
+
+playlist="${playlist_dir}/Favourites.m3u"
+if [[ "$file" != "" ]]; then
+	printf "%s\\n" "$file" >> "$playlist"
 	sort -u "$playlist" -o "$playlist"
 	notify-send -t 3000 "MPD" "Successfully added <b>${current//&/&amp;}</b> to Favourites"
 	exit 0

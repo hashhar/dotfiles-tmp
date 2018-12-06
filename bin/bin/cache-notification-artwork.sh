@@ -22,5 +22,3 @@ mpc clear
 mpc -q volume 100
 mpc -q random on
 mpc ls | mpc add
-
-# vim: set fdm=marker fen:
