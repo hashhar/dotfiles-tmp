@@ -1,0 +1,6 @@
+-o '~/Movies/%(title)s.%(ext)s'
+--write-sub
+--write-auto-sub
+--sub-lang en
+--convert-subs srt
+--embed-subs

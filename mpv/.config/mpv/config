@@ -1,0 +1,15 @@
+# no border
+#border=no
+
+# don't allow a new window to have a size larger than 90% of the screen size
+autofit-larger=90%x90%
+
+hwdec=auto
+save-position-on-quit
+
+# enable/disable OSX media keys
+input-media-keys=yes
+
+# autohide the cursor after 1s
+cursor-autohide=1000
+
