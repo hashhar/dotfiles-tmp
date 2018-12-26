@@ -1,0 +1,11 @@
+[Unit]
+Description=Last.fm reporting client for mpd
+Documentation=man:mpdscribble(1)
+After=remote-fs.target mpd.service
+
+[Service]
+ExecStart=/usr/bin/mpdscribble --no-daemon --conf /home/delhivery/.config/mpdscribble/mpdscribble.conf --log /home/delhivery/.config/mpdscribble/log
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=default.target
