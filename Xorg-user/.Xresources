@@ -17,8 +17,8 @@ URxvt.perl-ext-common:          default,tabbed
 ! Tabs (tabbed)
 URxvt.tabbed.tabbar-fg:         2
 URxvt.tabbed.tabbar-bg:         0
-URxvt.tabbed.tab-fg:            3
-URxvt.tabbed.tab-bg:            0
+URxvt.tabbed.tab-fg:            0
+URxvt.tabbed.tab-bg:            2
 
 ! Clickable URLs (matcher)
 URxvt.url-launcher:             /opt/firefox/firefox
@@ -38,33 +38,33 @@ URxvt.matcher.rend.0:           Uline Bold fg5
 ! -----------------------------------------------------------------------------
 
 ! hard contrast: *background:  #1D2021
-URxvt.background:              #282828
+URxvt.background:               #282828
 ! soft contrast: *background:  #32302F
-URxvt.foreground:              #EBDBB2
+URxvt.foreground:               #EBDBB2
 ! Black + DarkGrey
-URxvt.color0:                  #282828
-URxvt.color8:                  #928374
+URxvt.color0:                   #282828
+URxvt.color8:                   #928374
 ! DarkRed + Red
-URxvt.color1:                  #CC241D
-URxvt.color9:                  #FB4934
+URxvt.color1:                   #CC241D
+URxvt.color9:                   #FB4934
 ! DarkGreen + Green
-URxvt.color2:                  #98971A
-URxvt.color10:                 #B8BB26
+URxvt.color2:                   #98971A
+URxvt.color10:                  #B8BB26
 ! DarkYellow + Yellow
-URxvt.color3:                  #D79921
-URxvt.color11:                 #FABD2F
+URxvt.color3:                   #D79921
+URxvt.color11:                  #FABD2F
 ! DarkBlue + Blue
-URxvt.color4:                  #458588
-URxvt.color12:                 #83A598
+URxvt.color4:                   #458588
+URxvt.color12:                  #83A598
 ! DarkMagenta + Magenta
-URxvt.color5:                  #B16286
-URxvt.color13:                 #D3869B
+URxvt.color5:                   #B16286
+URxvt.color13:                  #D3869B
 ! DarkCyan + Cyan
-URxvt.color6:                  #689D6A
-URxvt.color14:                 #8EC07C
+URxvt.color6:                   #689D6A
+URxvt.color14:                  #8EC07C
 ! LightGrey + White
-URxvt.color7:                  #A89984
-URxvt.color15:                 #EBDBB2
+URxvt.color7:                   #A89984
+URxvt.color15:                  #EBDBB2
 ! }}}
 ! }}}
 
@@ -77,9 +77,9 @@ Xft.antialias:                  1
 Xft.rgba:                       rgb
 
 ! Fira Mono
-URxvt.font:                    xft:Fira Mono:size=10
-URxvt.letterSpace:             -1
-URxvt.lineSpace:               0.1
+URxvt.font:                     xft:Fira Mono:size=11
+URxvt.letterSpace:              -1
+URxvt.lineSpace:                0
 
 URxvt.skipBuiltinGlyphs:        false
 ! }}}
@@ -88,8 +88,8 @@ URxvt.skipBuiltinGlyphs:        false
 URxvt.depth:                    32
 URxvt.urgentOnBell:             true
 ! Transparent background
-URxvt.background:               [80]black
-URxvt.fading:                   25
+URxvt.background:               [90]black
+URxvt.fading:                   0
 
 URxvt.internalBorder:           5
 URxvt.externalBorder:           0
