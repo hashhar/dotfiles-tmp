@@ -36,7 +36,7 @@ todo() {
               if [[ -n "$number" ]]; then
                   sed -i "$number"d "$file"
               fi;;
-          "") less "$file";;
+          "") nl -b a "$file";;
            *) printf "%s\\n" "$*" >> "$file";;
     esac
 }
