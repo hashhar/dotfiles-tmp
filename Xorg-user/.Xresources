@@ -12,18 +12,32 @@ URxvt.saveLines:                10000
 ! }}}
 
 ! Extensions {{{
-URxvt.perl-ext-common:          default,tabbed
+URxvt.perl-ext-common:          default,confirm-paste,eval,font-size,matcher,tabbedex
 
 ! Tabs (tabbed)
 URxvt.tabbed.tabbar-fg:         2
 URxvt.tabbed.tabbar-bg:         0
 URxvt.tabbed.tab-fg:            0
 URxvt.tabbed.tab-bg:            2
+URxvt.tabbed.tabbedex-rs-prefix:%
+
+! Tabbedex (https://github.com/mina86/urxvt-tabbedex)
+URxvt.tabbedex.autohide:        false
+URxvt.tabbedex.title:           false
+URxvt.tabbedex.urgentOnBell:    true
+URxvt.tabbedex.tabbar-fg:       2
+URxvt.tabbedex.tabbar-bg:       0
+URxvt.tabbedex.tab-fg:          0
+URxvt.tabbedex.tab-bg:          2
+URxvt.tabbedex.bell-fg:         0
+URxvt.tabbedex.bell-bg:         2
 
 ! Clickable URLs (matcher)
 URxvt.url-launcher:             /opt/firefox/firefox
-URxvt.matcher.button:           1
+URxvt.matcher.button:           2
 URxvt.matcher.rend.0:           Uline Bold fg5
+URxvt.keysym.C-Delete:          perl:matcher:select
+URxvt.keysym.M-Delete:          perl:matcher:list
 ! }}}
 ! }}}
 
@@ -88,9 +102,11 @@ URxvt.skipBuiltinGlyphs:        false
 URxvt.depth:                    32
 URxvt.urgentOnBell:             true
 ! Transparent background
-URxvt.background:               [90]black
-URxvt.fading:                   0
+URxvt.background:               [80]black
+URxvt.fading:                   25
 
 URxvt.internalBorder:           5
 URxvt.externalBorder:           0
+
+URxvt.scrollColor:              [75]#008080
 ! }}}
