@@ -12,8 +12,9 @@ artist_png='<b>Artist:</b>\t'
 # Extract metadata {{{
 # title="$title_png$(mpc current -f "[[%track% - ]%title%]|$current_file_name")"
 title="$title_png$(mpc current -f "%title%|$current_file_name")"
-album="$album_png$(mpc current -f "%album%[ \[%date%\]]|Non-Album")"
-artist="$(mpc current -f "[$artist_png[%albumartist%]%artist%]")"
+# album="$album_png$(mpc current -f "%album%[ \[%date%\]]|Non-Album")"
+album="$album_png$(mpc current -f "%album%|Non-Album")"
+artist="$(mpc current -f "[$artist_png[[%albumartist%]|%artist%]]")"
 # }}}
 
 # Create the notification string {{{
