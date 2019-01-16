@@ -33,7 +33,6 @@ filter() {
 		"pushd*" \
 		"popd*" \
 		"mv*" \
-		"hstr*" \
 		"redis*")
 	cat ~/.bash_history > /tmp/hist
 	for pattern in "${patterns[@]}"; do
