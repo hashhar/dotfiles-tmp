@@ -29,13 +29,17 @@ default_prompt_setup()
             trailing="${UC}\$"
         fi
     fi
-    PS1="${C}\\w ${trailing} ${NONE}"
+    local gitstring="$(__posh_git_echo)"
+    if [[ "$gitstring" != "" ]]; then
+        gitstring+="\n"
+    fi
+    PS1="${C}\\w ${gitstring}${trailing} ${NONE}"
     export prefix="${C}\\w"
     export suffix="${trailing} ${NONE}"
 }
 
 . "$HOME/.local/src/posh-git-sh/git-prompt.sh"
-export PROMPT_COMMAND='default_prompt_setup; __posh_git_ps1 "$prefix " " $suffix"; history -a; history -n; '"${PROMPT_COMMAND}"
+export PROMPT_COMMAND='default_prompt_setup; history -a; history -n; '"${PROMPT_COMMAND}"
 # }}}
 
 # vim: tw=80 fdm=marker et sts=4 ts=4 sts=4 sw=4
