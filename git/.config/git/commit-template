@@ -9,12 +9,12 @@
 # Include a link to the ticket, if any.
 #
 # ADD = Create a capability e.g. feature, test, dependency.
-# DROP = Delete a capability e.g. feature, test, dependency.
+# REMOVE = Delete a capability e.g. feature, test, dependency.
 # FIX = Fix an issue e.g. bug, typo, accident, misstatement.
 # BUMP = Increase the version of something e.g. a dependency.
-# MAKE = Change the build process, or tools, or infrastructure.
-# START = Begin doing something; e.g. enable a toggle, feature flag, etc.
-# STOP = End doing something; e.g. disable a toggle, feature flag, etc.
+# BUILD = Change the build process, or tools, or infrastructure.
+# ENABLE = Begin doing something; e.g. enable a toggle, feature flag, etc.
+# DISABLE = End doing something; e.g. disable a toggle, feature flag, etc.
 # REFACTOR = A change that MUST be just refactoring.
 # REFORMAT = A change that MUST be just formatting, e.g. change spaces.
 # REARRANGE = A change that MUST be just arranging, e.g. change layout.

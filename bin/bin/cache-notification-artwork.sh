@@ -10,7 +10,9 @@ count=$(mpc listall | wc -l)
 mpc -q play
 mpc -q random off
 mpc -q repeat off
+sleep 1
 mpc -q volume 0
+sleep 1
 for (( i = 0; i < count; i++ )); do
 	mpc -q next
 	sleep 0.5
